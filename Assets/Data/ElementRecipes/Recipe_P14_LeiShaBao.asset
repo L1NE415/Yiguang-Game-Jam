@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7428645386d92384a92de20e81588495, type: 3}
+  m_Name: Recipe_P14_LeiShaBao
+  m_EditorClassIdentifier: Assembly-CSharp::ElementRecipe
+  InputA: {fileID: 11400000, guid: 29e28bfd3b75472b9cdd90a75e5a7cf9, type: 3}
+  InputB: {fileID: 11400000, guid: 3e3ef37d84224cc1a0b956eb7fff7dba, type: 3}
+  Output: {fileID: 11400000, guid: fe82cd8325c94a168fc42946b0ffb63b, type: 3}
+  CombineEventName: 

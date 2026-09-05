@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a0ebf875b05a0b4e8e4f6f84e42f8c7, type: 3}
-  m_Name: Element_Steam
+  m_Name: Element_Wind
   m_EditorClassIdentifier: Assembly-CSharp::Element
-  ElementId: Element_Steam
-  DisplayName: Steam
+  ElementId: Element_Wind
+  DisplayName: "\u98CE"
   Type: 0
-  Icon: {fileID: 0}
-  Description: "\u57FA\u7840\u5143\u7D20----\u84B8\u6C7D"
-  UseEventName: UseSteam
+  Icon: {fileID: 1337066383209952790, guid: 1b199a49828960f4d9b41d6a3236fef2, type: 3}
+  Description: "\u57FA\u7840\u5143\u7D20----\u98CE"
+  UseEventName: UseWind
   OnCraftedEventName: 

@@ -1,11 +1,13 @@
 using UnityEngine;
 
 /// <summary>
-/// 元素合成配方：InputA + InputB = Output（A/B 顺序无关）。
-/// 在 ElementCraftSystem 组件的 Inspector 列表中配置。
+/// 元素合成配方（ScriptableObject）：InputA + InputB = Output（A/B 顺序无关）。
+/// Create -> Gamejam -> ElementRecipe 创建配方资产。
+/// 配方资产统一放在 Assets/Data/ElementRecipes/ 下，
+/// 手动拖入 ElementCraftSystem 的 Recipes 列表使用。
 /// </summary>
-[System.Serializable]
-public class ElementRecipe
+[CreateAssetMenu(menuName = "Gamejam/ElementRecipe", fileName = "NewElementRecipe")]
+public class ElementRecipe : ScriptableObject
 {
     [Tooltip("原料 A")]
     public Element InputA;

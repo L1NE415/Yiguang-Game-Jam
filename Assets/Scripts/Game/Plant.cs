@@ -105,6 +105,17 @@ public class Plant : MonoBehaviour
     [Tooltip("当前生长阶段")]
     public GrowthStage Stage = GrowthStage.Seed;
 
+    [Header("元素使用检测")]
+    [Tooltip("元素使用的检测半径（世界单位）：拖动元素图标松手时，鼠标世界位置进入该半径即视为对本植物使用该元素。<= 0 时按默认值 2.5 处理")]
+    [SerializeField] private float useDetectRadius = 2.5f;
+
+    /// <summary>
+    /// 有效检测半径。
+    /// 注意：场景里已存在的 Plant 组件反序列化新增字段会得到 0（不会用 C# 初始值），
+    /// 因此这里做 0 值回退，保证旧组件无需手动 Reset 也能用默认半径。
+    /// </summary>
+    public float UseDetectRadius => useDetectRadius > 0f ? useDetectRadius : 2.5f;
+
     /// <summary>当前阶段的生长进度（0~1），可用来驱动缩放动画</summary>
     public float StageProgress { get; private set; }
 
@@ -276,6 +287,50 @@ public class Plant : MonoBehaviour
         StageRequirements = defaults;
     }
 
+    // ==================== 元素使用检测 ====================
+
+    /// <summary>
+    /// 判断屏幕坐标是否落在本植物的检测范围内（检测半径 UseDetectRadius）。
+    /// 用于"拖动元素图标到植物上松手"的命中判断。
+    /// </summary>
+    public bool IsScreenPointInRange(Vector2 screenPos)
+    {
+        var cam = Camera.main;
+        if (cam == null) return false;
+
+        // 屏幕坐标 → 世界坐标（正交相机；z 传相机到 z=0 平面的距离，保证落在游戏平面上）
+        var worldPos = cam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, -cam.transform.position.z));
+        return Vector2.Distance(transform.position, worldPos) <= UseDetectRadius;
+    }
+
+    /// <summary>
+    /// 找到屏幕坐标命中的植物（检测范围内距离最近的一个），没有则返回 null。
+    /// 场景里有多株植物时取最近；只有一株时即"鼠标在它附近松手"。
+    /// </summary>
+    public static Plant GetPlantUnderPointer(Vector2 screenPos)
+    {
+        var cam = Camera.main;
+        if (cam == null) return null;
+
+        var worldPos = cam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, -cam.transform.position.z));
+
+        Plant best = null;
+        float bestDist = float.MaxValue;
+        foreach (var plant in FindObjectsByType<Plant>(FindObjectsInactive.Exclude, FindObjectsSortMode.None))
+        {
+            // 死亡/已成熟的植物不再接受元素使用
+            if (plant.IsDead || plant.IsFullyGrown) continue;
+
+            float d = Vector2.Distance(plant.transform.position, worldPos);
+            if (d <= plant.UseDetectRadius && d < bestDist)
+            {
+                best = plant;
+                bestDist = d;
+            }
+        }
+        return best;
+    }
+
     // ==================== 外部操作接口 ====================
 
     /// <summary>浇水（增加水分）</summary>
@@ -296,6 +351,27 @@ public class Plant : MonoBehaviour
         Sunlight = Mathf.Min(100f, Sunlight + amount);
     }
 
+    /// <summary>
+    /// 应用元素/天气效果：水分、阳光、养分三项同时增减（各自 clamp 到 0~100）。
+    /// 与 WaterPlant/Fertilize/AddSunlight 不同，本方法支持负数（削弱），
+    /// 是元素被使用事件（ElementUseEffectLibrary）作用到植物的统一入口。
+    /// </summary>
+    public void ApplyWeatherEffect(float waterDelta, float sunlightDelta, float nutrientDelta)
+    {
+        Water = Mathf.Clamp(Water + waterDelta, 0f, 100f);
+        Sunlight = Mathf.Clamp(Sunlight + sunlightDelta, 0f, 100f);
+        Nutrient = Mathf.Clamp(Nutrient + nutrientDelta, 0f, 100f);
+    }
+
+#if UNITY_EDITOR
+    /// <summary>选中植物时在 Scene 视图画出元素使用检测范围（青色圆圈）</summary>
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, UseDetectRadius);
+    }
+#endif
+
     /// <summary>重置回种子阶段（收获后再种一轮 / 重开一局）</summary>
     public void ResetPlant()
     {
@@ -306,5 +382,6 @@ public class Plant : MonoBehaviour
         IsDead = false;
         Water = 50f;
         Nutrient = 50f;
+        EventCenter.Trigger(EventName.PlantReset, this);
     }
 }
