@@ -20,6 +20,9 @@ namespace Framwork
         /// </summary>
         public const string PlantFailed = "PlantFailed";
 
+        /// <summary>植物被重置回种子阶段（参数：Plant 植物实例；收获后再种一轮 / 重开一局）</summary>
+        public const string PlantReset = "PlantReset";
+
         // ---------- 元素合成系统 ----------
 
         /// <summary>元素合成成功（参数：Element 原料A，Element 原料B，Element 产物）</summary>
@@ -28,7 +31,7 @@ namespace Framwork
         /// <summary>元素合成失败（参数：Element 原料A，Element 原料B）</summary>
         public const string ElementCombineFailed = "ElementCombineFailed";
 
-        /// <summary>元素被使用（参数：Element 被使用的元素）</summary>
+        /// <summary>元素被使用（参数：Element 被使用的元素，Plant 目标植物；不是对植物使用时为 null）</summary>
         public const string ElementUsed = "ElementUsed";
 
         // ---------- 天气系统 ----------

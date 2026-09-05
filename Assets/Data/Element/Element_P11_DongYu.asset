@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0ebf875b05a0b4e8e4f6f84e42f8c7, type: 3}
+  m_Name: Element_P11_DongYu
+  m_EditorClassIdentifier: Assembly-CSharp::Element
+  ElementId: Element_P11_DongYu
+  DisplayName: "\u51BB\u96E8"
+  Type: 1
+  Icon: {fileID: 1337066383209952790, guid: 1b199a49828960f4d9b41d6a3236fef2, type: 3}
+  Description: "\u7279\u6B8A\u5143\u7D20\uFF08\u5929\u6C14\uFF09P11 \u51BB\u96E8\uFF5C\u6C34\uFF0B\u96EA\uFF5C\u6C34\u5206+7\uFF5C\u9633\u5149-5\uFF5C\u517B\u5206+3\uFF5C\u9AD8\u6C34\u5206\uFF0C\u5F3A\u538B\u9633\u5149"
+  UseEventName: UseP11
+  OnCraftedEventName: CraftedP11
