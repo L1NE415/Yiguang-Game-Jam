@@ -24,6 +24,9 @@ public enum GrowthStage
 /// 水分/养分高于阈值时持续生长，攒满每阶段所需时间就进入下一阶段；
 /// 每次进入新阶段会通过 EventCenter 广播 PlantStageChange 事件。
 ///
+/// Buff 接入：BuffSystem（天气/元素事件触发）提供全场生长与消耗倍率，
+/// 本类每帧读取并乘上；场景里没挂 BuffSystem 时按倍率 1 正常生长。
+///
 /// 用法示例：
 /// <code>
 /// // 浇水 / 施肥 / 调整光照（任意脚本调用）
@@ -80,16 +83,26 @@ public class Plant : MonoBehaviour
         // 成熟后不再生长，但仍然消耗资源（可按需改成不消耗）
         if (IsMature) return;
 
-        // 1. 资源随时间消耗
-        Water = Mathf.Max(0f, Water - WaterConsumePerSec * Time.deltaTime);
-        Nutrient = Mathf.Max(0f, Nutrient - NutrientConsumePerSec * Time.deltaTime);
+        // 0. Buff 倍率（没挂 BuffSystem 时视为 1，不影响原逻辑）
+        var buffs = BuffSystem.Instance;
+        float growthMul = 1f, waterMul = 1f, nutrientMul = 1f;
+        if (buffs != null)
+        {
+            growthMul = buffs.GrowthMultiplier;
+            waterMul = buffs.WaterDrainMultiplier;
+            nutrientMul = buffs.NutrientDrainMultiplier;
+        }
+
+        // 1. 资源随时间消耗（消耗速率受 Buff 影响）
+        Water = Mathf.Max(0f, Water - WaterConsumePerSec * waterMul * Time.deltaTime);
+        Nutrient = Mathf.Max(0f, Nutrient - NutrientConsumePerSec * nutrientMul * Time.deltaTime);
 
         // 2. 资源不足则暂停生长（缺水或缺肥）
         if (Water < MinWaterToGrow || Nutrient < MinNutrientToGrow)
             return;
 
-        // 3. 正常生长：阳光决定速度
-        StageProgress += Time.deltaTime * GrowthSpeedFactor / StageDuration;
+        // 3. 正常生长：阳光决定速度，Buff 再乘一个倍率
+        StageProgress += Time.deltaTime * GrowthSpeedFactor * growthMul / StageDuration;
         if (StageProgress >= 1f)
         {
             StageProgress = 0f;

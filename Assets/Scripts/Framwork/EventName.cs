@@ -37,5 +37,13 @@ namespace Framwork
         // 每种天气自己的事件名不在这里定义，直接以字符串填在 Weather 资产的
         // StartEventName / EndEventName 上，订阅方使用相同字符串即可，例如：
         // EventCenter.Subscribe<Weather>("WeatherStormStart", w => { ... });
+
+        // ---------- Buff 系统 ----------
+
+        /// <summary>Buff 生效（参数：PlantBuff 生效的 Buff，float 持续秒数；重复触发为刷新时长）</summary>
+        public const string BuffApplied = "BuffApplied";
+
+        /// <summary>Buff 结束（参数：PlantBuff 结束的 Buff，含到期与手动移除）</summary>
+        public const string BuffRemoved = "BuffRemoved";
     }
 }
