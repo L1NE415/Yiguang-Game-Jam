@@ -15,7 +15,7 @@ MonoBehaviour:
   ElementId: Emotion_Intern
   DisplayName: "\u8FF7\u8DEF\u5B9E\u4E60\u751F"
   Type: 0
-  Icon: {fileID: -967244358555946368, guid: 1b199a49828960f4d9b41d6a3236fef2, type: 3}
+  Icon: {fileID: -719052606462289957, guid: aacbf8db24b1195419f860587c5879e7, type: 3}
   Description: "\u5165\u804C\u7B2C N \u5929\uFF0C\u4ECD\u5728\u5BFB\u627E\u6B63\u786E\u7684\u4F1A\u8BAE\u5BA4\u3002"
   UseEventName: 
   OnCraftedEventName: 

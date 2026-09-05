@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,7 +29,8 @@ namespace Game.BackpackSystem
         }
 
         /// <summary>
-        /// 填充视图。count <= 1 时隐藏数量文本（单个不显示数字）。
+        /// 填充视图。数量文本只对需要计数的元素显示（见 ShouldShowCount）：
+        /// 天气瓶显示剩余数量（含 1），基础元素与情绪元素不显示。
         /// </summary>
         public void Setup(Element element, int count = 1)
         {
@@ -54,10 +56,26 @@ namespace Game.BackpackSystem
 
             if (countText != null)
             {
-                countText.text = count > 1 ? count.ToString() : string.Empty;
+                countText.text = ShouldShowCount(element) ? count.ToString() : string.Empty;
                 // 文本不参与射线，避免挡住图标 / 卡槽
                 countText.raycastTarget = false;
             }
+        }
+
+        /// <summary>
+        /// 是否显示剩余数量文本：
+        /// - 天气瓶（ElementId 以 Element_P 开头）→ 显示剩余数量（含 1 个时也显示）
+        /// - 情绪元素（Emotion_ 前缀的新情绪瓶 / Element_C 前缀的旧情绪产物）→ 不显示
+        /// - 基础元素（Element_Water 等，无 P/C/Emotion 前缀）→ 不显示
+        /// </summary>
+        private static bool ShouldShowCount(Element element)
+        {
+            if (element == null) return false;
+
+            string id = element.ElementId;
+            if (string.IsNullOrEmpty(id)) return false;
+
+            return id.StartsWith("Element_P", StringComparison.OrdinalIgnoreCase);
         }
     }
 }

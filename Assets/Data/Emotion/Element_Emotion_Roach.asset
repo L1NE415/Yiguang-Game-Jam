@@ -15,7 +15,7 @@ MonoBehaviour:
   ElementId: Emotion_Roach
   DisplayName: "\u5DE5\u4F4D\u87D1\u8782\u738B"
   Type: 0
-  Icon: {fileID: -967244358555946368, guid: 1b199a49828960f4d9b41d6a3236fef2, type: 3}
+  Icon: {fileID: -3311445501793164497, guid: aacbf8db24b1195419f860587c5879e7, type: 3}
   Description: "\u76D8\u8E1E\u5728\u952E\u76D8\u4E0B\u7684\u738B\uFF0C\u6740\u4E0D\u6B7B\uFF0C\u53EA\u4F1A\u66F4\u5F3A\u3002"
   UseEventName: 
   OnCraftedEventName: 

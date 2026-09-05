@@ -15,7 +15,7 @@ MonoBehaviour:
   ElementId: Element_C26
   DisplayName: "\u4F60\u8981\u6C14\u6B7B\u5988\u5988\u5417"
   Type: 1
-  Icon: {fileID: 0}
+  Icon: {fileID: -1012840309609008439, guid: 20c8dfff4f08eed4cb7cc4c00be51eb4, type: 3}
   Description: "\u7279\u6B8A\u5143\u7D20\uFF08\u60C5\u7EEA\uFF09C26 \u4F60\u8981\u6C14\u6B7B\u5988\u5988\u5417\uFF5C\u96F7\uFF0B\u5988\u5988\u768460\u79D2"
   UseEventName: UseC26
   OnCraftedEventName: 

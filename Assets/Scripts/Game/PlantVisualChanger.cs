@@ -12,16 +12,17 @@ using UnityEngine;
 /// - 阶段失败（PlantFailed）→ 换成枯萎贴图（死掉的植物）
 /// - 重新播种（PlantReset）→ 回到种子贴图
 ///
-/// 贴图数据在 Inspector 上配置（数组下标即 GrowthStage 枚举值）：
-///   stageSprites[0] = 种子 Seed
-///   stageSprites[1] = 发芽 Sprout
-///   stageSprites[2] = 成熟 Mature（默认）
-///   deadSprite      = 枯萎（阶段失败时显示）
+/// 贴图全部在 Inspector 上手动拖入，没有任何自动填充 / 回退：
+///   seedSprite    = 种子 Seed
+///   sproutSprite  = 发芽 Sprout
+///   matureSprite  = 成熟 Mature（默认）
+///   deadSprite    = 枯萎（阶段失败时显示）
+/// 留空的贴图：对应阶段/状态切换时不改贴图（保持 SpriteRenderer 当前显示）。
 ///
-/// 最终形态（第三阶段外观）：
+/// 最终形态（第三阶段外观，贴图同样手动拖入）：
 ///   第二阶段属性区间判定锁定形态后（Plant.FinalForm / PlantFinalFormDetermined 事件），
 ///   进入第三阶段时自动换成 pothosSprite（绿萝）/ cactusSprite（仙人掌）/ flytrapSprite（捕蝇草），
-///   未锁定或贴图未配置时回退 matureSprite。
+///   形态未锁定或对应贴图留空时使用 matureSprite。
 ///
 /// 完全依赖 Plant 触发的事件，无需手动调用任何方法；
 /// 也支持调用 <see cref="Refresh"/> 主动刷新一次当前阶段贴图。
@@ -36,28 +37,28 @@ public class PlantVisualChanger : MonoBehaviour
     [Tooltip("要改贴图的 SpriteRenderer：留空时自动在自身/子物体上查找")]
     [SerializeField] private SpriteRenderer spriteRenderer;
 
-    [Header("阶段贴图（下标 = GrowthStage 枚举值）")]
-    [Tooltip("种子阶段贴图")]
+    [Header("阶段贴图（手动拖入；留空的阶段不换贴图）")]
+    [Tooltip("种子阶段贴图（手动拖入；留空则种子阶段不换贴图）")]
     [SerializeField] private Sprite seedSprite;
 
-    [Tooltip("发芽阶段贴图")]
+    [Tooltip("发芽阶段贴图（手动拖入；留空则发芽阶段不换贴图）")]
     [SerializeField] private Sprite sproutSprite;
 
-    [Tooltip("成熟阶段默认贴图（最终形态未锁定 / 对应形态贴图未配置时使用）")]
+    [Tooltip("成熟阶段默认贴图（手动拖入；最终形态未锁定 / 形态贴图留空时使用）")]
     [SerializeField] private Sprite matureSprite;
 
     [Header("最终形态贴图（第二阶段属性区间判定，见 Plant.FinalFormRules）")]
-    [Tooltip("绿萝贴图：第二阶段水/阳光/养分都维持在 12~25 连续超 10 秒时第三阶段显示；不填则回退 matureSprite")]
+    [Tooltip("绿萝贴图：第二阶段水/阳光/养分都维持在 12~25 连续超 10 秒时第三阶段显示；留空则用 matureSprite")]
     [SerializeField] private Sprite pothosSprite;
 
-    [Tooltip("仙人掌贴图：第二阶段水 1~6、阳光 20~40、养分 12~25 连续超 10 秒时第三阶段显示；不填则回退 matureSprite")]
+    [Tooltip("仙人掌贴图：第二阶段水 1~6、阳光 20~40、养分 12~25 连续超 10 秒时第三阶段显示；留空则用 matureSprite")]
     [SerializeField] private Sprite cactusSprite;
 
-    [Tooltip("捕蝇草贴图：第二阶段水 12~25、阳光 12~25、养分 26~45 连续超 10 秒时第三阶段显示；不填则回退 matureSprite")]
+    [Tooltip("捕蝇草贴图：第二阶段水 12~25、阳光 12~25、养分 26~45 连续超 10 秒时第三阶段显示；留空则用 matureSprite")]
     [SerializeField] private Sprite flytrapSprite;
 
     [Header("死亡 / 重置")]
-    [Tooltip("枯萎贴图（阶段失败时显示）；不填则死亡时保持当前贴图")]
+    [Tooltip("枯萎贴图（阶段失败时显示）；留空则死亡时保持当前贴图")]
     [SerializeField] private Sprite deadSprite;
 
     [Header("动画")]

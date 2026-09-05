@@ -15,8 +15,7 @@ MonoBehaviour:
   ElementId: Element_P16_KuangFeng
   DisplayName: "\u72C2\u98CE"
   Type: 1
-  Icon: {fileID: 1337066383209952790, guid: 1b199a49828960f4d9b41d6a3236fef2, type: 3}
+  Icon: {fileID: 8878343641880609924, guid: 599921795feb6434ab639ce0125d14ec, type: 3}
   Description: "\u7279\u6B8A\u5143\u7D20\uFF08\u5929\u6C14\uFF09P16 \u72C2\u98CE\uFF5C\u98CE\uFF0B\u98CE\uFF5C\u6C34\u5206-3\uFF5C\u9633\u5149+7\uFF5C\u517B\u5206+3\uFF5C\u9AD8\u9633\u5149\uFF0C\u8F7B\u5EA6\u5931\u6C34"
   UseEventName: UseP16
   OnCraftedEventName: CraftedP16
-

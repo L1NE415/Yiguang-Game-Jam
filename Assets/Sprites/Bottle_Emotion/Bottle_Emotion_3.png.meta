@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 4cb08036eb994bb428fd64c44f3826da
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 303350120951945934
+    second: Bottle_Emotion_3_0
+  - first:
+      213: 7780952264773187173
+    second: Bottle_Emotion_3_1
+  - first:
+      213: 8305722397222220831
+    second: Bottle_Emotion_3_2
+  - first:
+      213: -8471765445559559281
+    second: Bottle_Emotion_3_3
+  - first:
+      213: -80649022692090891
+    second: Bottle_Emotion_3_4
+  - first:
+      213: 4685742115926224309
+    second: Bottle_Emotion_3_5
+  - first:
+      213: -2353925723051121907
+    second: Bottle_Emotion_3_6
+  - first:
+      213: -9118232770145390094
+    second: Bottle_Emotion_3_7
+  - first:
+      213: 1570113179258639358
+    second: Bottle_Emotion_3_8
+  - first:
+      213: -8461821205749605113
+    second: Bottle_Emotion_3_9
+  - first:
+      213: -4817845424905532291
+    second: Bottle_Emotion_3_10
+  - first:
+      213: 2740123227027110311
+    second: Bottle_Emotion_3_11
+  - first:
+      213: -7927151940901253117
+    second: Bottle_Emotion_3_12
+  - first:
+      213: -1302366817411367106
+    second: Bottle_Emotion_3_13
+  - first:
+      213: 5076477799204942269
+    second: Bottle_Emotion_3_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bottle_Emotion_3_0
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 7
+        width: 221
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eca99e9e357b53400800000000000000
+      internalID: 303350120951945934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottle_Emotion_3_1
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 7
+        width: 221
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 566b31c0cde7bfb60800000000000000
+      internalID: 7780952264773187173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottle_Emotion_3_2
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 7
+        width: 221
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f14bf61c38ad34370800000000000000
+      internalID: 8305722397222220831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottle_Emotion_3_3
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 7
+        width: 221
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8b5efc663e3e6a80800000000000000
+      internalID: -8471765445559559281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottle_Emotion_3_4
+      rect:
+        serializedVersion: 2
+        x: 1053
+        y: 7
+        width: 221
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fb94f2242a71eef0800000000000000
+      internalID: -80649022692090891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottle_Emotion_3_5
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 7
+        width: 221
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bdaed8d0a9170140800000000000000
+      internalID: 4685742115926224309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottle_Emotion_3_6
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 7
+        width: 221
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0322e9c60d255fd0800000000000000
+      internalID: -2353925723051121907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottle_Emotion_3_7
+      rect:
+        serializedVersion: 2
+        x: 1821
+        y: 7
+        width: 221
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f178242b97857180800000000000000
+      internalID: -9118232770145390094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottle_Emotion_3_8
+      rect:
+        serializedVersion: 2
+        x: 2077
+        y: 7
+        width: 221
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef3ded22e992ac510800000000000000
+      internalID: 1570113179258639358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottle_Emotion_3_9
+      rect:
+        serializedVersion: 2
+        x: 2333
+        y: 7
+        width: 221
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70d5d6e2272919a80800000000000000
+      internalID: -8461821205749605113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottle_Emotion_3_10
+      rect:
+        serializedVersion: 2
+        x: 2589
+        y: 7
+        width: 221
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7cc3c1bc13932db0800000000000000
+      internalID: -4817845424905532291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottle_Emotion_3_11
+      rect:
+        serializedVersion: 2
+        x: 2845
+        y: 7
+        width: 221
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a97fb3ae8fd60620800000000000000
+      internalID: 2740123227027110311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottle_Emotion_3_12
+      rect:
+        serializedVersion: 2
+        x: 3101
+        y: 7
+        width: 221
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30058024f491df190800000000000000
+      internalID: -7927151940901253117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottle_Emotion_3_13
+      rect:
+        serializedVersion: 2
+        x: 3357
+        y: 7
+        width: 221
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3f70f0a7401dede0800000000000000
+      internalID: -1302366817411367106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottle_Emotion_3_14
+      rect:
+        serializedVersion: 2
+        x: 3613
+        y: 7
+        width: 221
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db174cb79a5437640800000000000000
+      internalID: 5076477799204942269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Bottle_Emotion_3_0: 303350120951945934
+      Bottle_Emotion_3_1: 7780952264773187173
+      Bottle_Emotion_3_10: -4817845424905532291
+      Bottle_Emotion_3_11: 2740123227027110311
+      Bottle_Emotion_3_12: -7927151940901253117
+      Bottle_Emotion_3_13: -1302366817411367106
+      Bottle_Emotion_3_14: 5076477799204942269
+      Bottle_Emotion_3_2: 8305722397222220831
+      Bottle_Emotion_3_3: -8471765445559559281
+      Bottle_Emotion_3_4: -80649022692090891
+      Bottle_Emotion_3_5: 4685742115926224309
+      Bottle_Emotion_3_6: -2353925723051121907
+      Bottle_Emotion_3_7: -9118232770145390094
+      Bottle_Emotion_3_8: 1570113179258639358
+      Bottle_Emotion_3_9: -8461821205749605113
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
