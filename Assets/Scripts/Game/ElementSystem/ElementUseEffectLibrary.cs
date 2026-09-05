@@ -31,22 +31,23 @@ public class ElementUseEffect
 }
 
 /// <summary>
-/// 元素使用事件库：集中存放全部 27 种元素（6 基础 B01~B06 + 21 特殊 P01~P21）
+/// 元素使用事件库：集中存放全部 63 种元素（6 基础 B01~B06 + 21 特殊 P01~P21 + 36 情绪产物 C01~C36）
 /// 的"被使用"事件内容——即对植物水分/阳光/养分的三项增减数值表。
 ///
 /// 工作方式（全事件驱动，无需挂到场景）：
 /// - 启动时（RuntimeInitializeOnLoadMethod）向 EventCenter 订阅全部事件名，
-///   事件名与元素资产上的 UseEventName 一一对应（UseLight / UseWater / ... / UseP21）。
+///   事件名与元素资产上的 UseEventName 一一对应（UseLight / UseWater / ... / UseP21 / UseC01~UseC36）。
 /// - 拖动元素图标到植物检测范围松手时，DragHandle 会触发
 ///   EventCenter.Trigger(element.UseEventName, element, plant)，
 ///   本库收到后按表把数值应用到 plant.ApplyWeatherEffect(...)。
 /// - 新增元素效果只需在本文件的 Effects 表里加一行，不用改任何其他代码。
 ///
-/// 数值来源：设计表「基础元素天气倾向 B01~B06」+「基础＋基础 21 种天气瓶 P01~P21」。
+/// 数值来源：设计表「基础元素天气倾向 B01~B06」+「基础＋基础 21 种天气瓶 P01~P21」
+///          +「基础 × 情绪 36 种办公室名场面 C01~C36」。
 /// </summary>
 public static class ElementUseEffectLibrary
 {
-    /// <summary>效果总表：事件名 → 效果（B01~B06 + P01~P21 共 27 条）</summary>
+    /// <summary>效果总表：事件名 → 效果（B01~B06 + P01~P21 + C01~C36 共 63 条）</summary>
     private static readonly Dictionary<string, ElementUseEffect> Effects =
         new Dictionary<string, ElementUseEffect>
         {
@@ -80,6 +81,50 @@ public static class ElementUseEffectLibrary
             { "UseP19", new ElementUseEffect { EventName = "UseP19", WeatherName = "连环雷",   Water = +5, Sunlight = -5, Nutrient = +10, Description = "极强养分，高风险" } },
             { "UseP20", new ElementUseEffect { EventName = "UseP20", WeatherName = "雷雪",     Water = +5, Sunlight = -5, Nutrient = +8,  Description = "水分＋养分双高" } },
             { "UseP21", new ElementUseEffect { EventName = "UseP21", WeatherName = "暴雪",     Water = +7, Sunlight = -5, Nutrient = +2,  Description = "强补水，明显压光" } },
+
+            // ---------- 情绪合成产物 C01~C36（基础元素 × 情绪元素） ----------
+            // 光 ＋ 情绪（倾向：强光增阳）
+            { "UseC01", new ElementUseEffect { EventName = "UseC01", WeatherName = "聚光灯找凌玲",   Water = -3, Sunlight = +7, Nutrient = +3,  Description = "强光聚焦，轻度失水" } },
+            { "UseC02", new ElementUseEffect { EventName = "UseC02", WeatherName = "妈妈的圣光",     Water = -2, Sunlight = +8, Nutrient = +2,  Description = "圣光普照，纯增阳光" } },
+            { "UseC03", new ElementUseEffect { EventName = "UseC03", WeatherName = "五排上星",       Water = -1, Sunlight = +6, Nutrient = +5,  Description = "上分激励，光养双补" } },
+            { "UseC04", new ElementUseEffect { EventName = "UseC04", WeatherName = "晒不死的小强",   Water = -4, Sunlight = +9, Nutrient = +3,  Description = "极强阳光，明显失水" } },
+            { "UseC05", new ElementUseEffect { EventName = "UseC05", WeatherName = "追光吧，实习生", Water = -3, Sunlight = +6, Nutrient = +4,  Description = "追光成长，光养兼得" } },
+            { "UseC06", new ElementUseEffect { EventName = "UseC06", WeatherName = "猫在晒我在班",   Water = -2, Sunlight = +5, Nutrient = +3,  Description = "温和暖阳，轻松舒适" } },
+            // 水 ＋ 情绪（倾向：补水压光）
+            { "UseC07", new ElementUseEffect { EventName = "UseC07", WeatherName = "全场冒冷汗",     Water = +7, Sunlight = -4, Nutrient = +2,  Description = "冷汗补水，气氛转阴" } },
+            { "UseC08", new ElementUseEffect { EventName = "UseC08", WeatherName = "语音连绵不绝",   Water = +8, Sunlight = -3, Nutrient = +3,  Description = "连绵滋润，持续补水" } },
+            { "UseC09", new ElementUseEffect { EventName = "UseC09", WeatherName = "这把躺赢局",     Water = +5, Sunlight = -1, Nutrient = +4,  Description = "躺赢滋润，均衡舒适" } },
+            { "UseC10", new ElementUseEffect { EventName = "UseC10", WeatherName = "高“强”度冲浪",   Water = +6, Sunlight = -2, Nutrient = +5,  Description = "冲浪激流，水养双补" } },
+            { "UseC11", new ElementUseEffect { EventName = "UseC11", WeatherName = "实习生漂流记",   Water = +9, Sunlight = -4, Nutrient = +2,  Description = "漂流强补水，明显遮光" } },
+            { "UseC12", new ElementUseEffect { EventName = "UseC12", WeatherName = "猫监工玩水",     Water = +6, Sunlight = -3, Nutrient = +4,  Description = "玩水嬉戏，水养兼顾" } },
+            // 沙 ＋ 情绪（倾向：偏养分）
+            { "UseC13", new ElementUseEffect { EventName = "UseC13", WeatherName = "凌玲藏哪儿了",       Water = -3, Sunlight = -2, Nutrient = +7,  Description = "翻找沙土，偏养分" } },
+            { "UseC14", new ElementUseEffect { EventName = "UseC14", WeatherName = "相亲现场原地埋",     Water = -4, Sunlight = -3, Nutrient = +8,  Description = "尴尬埋沙，高养分低光" } },
+            { "UseC15", new ElementUseEffect { EventName = "UseC15", WeatherName = "峡谷沙场",           Water = -2, Sunlight = +1, Nutrient = +7,  Description = "沙场练兵，养分为主" } },
+            { "UseC16", new ElementUseEffect { EventName = "UseC16", WeatherName = "小强卷土重来",       Water = -4, Sunlight = -2, Nutrient = +9,  Description = "卷土养分爆发，持续失水" } },
+            { "UseC17", new ElementUseEffect { EventName = "UseC17", WeatherName = "新人陷进沙坑",       Water = -3, Sunlight = -3, Nutrient = +7,  Description = "深陷沙坑，偏养分" } },
+            { "UseC18", new ElementUseEffect { EventName = "UseC18", WeatherName = "猫砂警报",           Water = -5, Sunlight = -2, Nutrient = +6,  Description = "猫砂扬尘，高失水" } },
+            // 风 ＋ 情绪（倾向：通风增光）
+            { "UseC19", new ElementUseEffect { EventName = "UseC19", WeatherName = "八卦之心起飞",   Water = -2, Sunlight = +6, Nutrient = +3,  Description = "八卦乘风，通风增光" } },
+            { "UseC20", new ElementUseEffect { EventName = "UseC20", WeatherName = "60秒全楼公放",   Water = -3, Sunlight = +7, Nutrient = +2,  Description = "社死强风，大风增光" } },
+            { "UseC21", new ElementUseEffect { EventName = "UseC21", WeatherName = "顺风车队",       Water = -1, Sunlight = +6, Nutrient = +4,  Description = "顺风开团，光养双补" } },
+            { "UseC22", new ElementUseEffect { EventName = "UseC22", WeatherName = "飞天大蟑螂",     Water = -3, Sunlight = +8, Nutrient = +3,  Description = "飞天狂风，高阳光" } },
+            { "UseC23", new ElementUseEffect { EventName = "UseC23", WeatherName = "吹错部门",       Water = -3, Sunlight = +3, Nutrient = +3,  Description = "混乱小风，轻微失水" } },
+            { "UseC24", new ElementUseEffect { EventName = "UseC24", WeatherName = "猫毛满天飞",     Water = -2, Sunlight = +5, Nutrient = +2,  Description = "猫毛纷飞，温和通风" } },
+            // 雷 ＋ 情绪（倾向：养分爆发）
+            { "UseC25", new ElementUseEffect { EventName = "UseC25", WeatherName = "阿姨的雷霆之怒", Water = +2, Sunlight = -5, Nutrient = +10, Description = "最强养分爆发，压低阳光" } },
+            { "UseC26", new ElementUseEffect { EventName = "UseC26", WeatherName = "你要气死妈妈吗", Water = +1, Sunlight = -4, Nutrient = +9,  Description = "怒气养分爆发" } },
+            { "UseC27", new ElementUseEffect { EventName = "UseC27", WeatherName = "风暴龙王降临",   Water = +5, Sunlight = -4, Nutrient = +8,  Description = "风暴降临，水养双高" } },
+            { "UseC28", new ElementUseEffect { EventName = "UseC28", WeatherName = "键盘雷击",       Water = +3, Sunlight = -3, Nutrient = +8,  Description = "键盘噼啪，养分为主" } },
+            { "UseC29", new ElementUseEffect { EventName = "UseC29", WeatherName = "新人被点名",     Water = +2, Sunlight = -4, Nutrient = +9,  Description = "点名压力，养分爆发" } },
+            { "UseC30", new ElementUseEffect { EventName = "UseC30", WeatherName = "猫式雷霆查岗",   Water = +3, Sunlight = -4, Nutrient = +8,  Description = "雷霆查岗，水养兼顾" } },
+            // 雪 ＋ 情绪（倾向：补水压光转冷）
+            { "UseC31", new ElementUseEffect { EventName = "UseC31", WeatherName = "会议室瞬间冷场", Water = +6, Sunlight = -5, Nutrient = +2,  Description = "冷场降温，强压阳光" } },
+            { "UseC32", new ElementUseEffect { EventName = "UseC32", WeatherName = "未读先冷静",     Water = +5, Sunlight = -4, Nutrient = +3,  Description = "冷静补水，压光" } },
+            { "UseC33", new ElementUseEffect { EventName = "UseC33", WeatherName = "车队翻车",       Water = +7, Sunlight = -5, Nutrient = +1,  Description = "寒心翻车，强补水压光" } },
+            { "UseC34", new ElementUseEffect { EventName = "UseC34", WeatherName = "蟑螂棒棒冰",     Water = +6, Sunlight = -4, Nutrient = +3,  Description = "冰冻补水，养分小补" } },
+            { "UseC35", new ElementUseEffect { EventName = "UseC35", WeatherName = "这个新人不太冷", Water = +4, Sunlight = -3, Nutrient = +3,  Description = "温和冷感，均衡补水" } },
+            { "UseC36", new ElementUseEffect { EventName = "UseC36", WeatherName = "猫咪冷脸",       Water = +5, Sunlight = -5, Nutrient = +2,  Description = "冷脸降温，补水压光" } },
         };
 
     /// <summary>
@@ -102,7 +147,7 @@ public static class ElementUseEffectLibrary
             EventCenter.Subscribe<Element, Plant>(effect.EventName,
                 (element, plant) => Apply(effect, element, plant));
         }
-        Debug.Log($"[ElementUseEffectLibrary] 已订阅 {Effects.Count} 个元素使用事件（6 基础 + 21 特殊）");
+        Debug.Log($"[ElementUseEffectLibrary] 已订阅 {Effects.Count} 个元素使用事件（6 基础 + 21 特殊 + 36 情绪）");
     }
 
     /// <summary>按事件名查询效果（调试/其他系统复用；没有返回 null）</summary>

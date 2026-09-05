@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7428645386d92384a92de20e81588495, type: 3}
+  m_Name: Recipe_C09
+  m_EditorClassIdentifier: Assembly-CSharp::ElementRecipe
+  InputA: {fileID: 11400000, guid: 418b61984eaf91b47bcff10e2b3370d4, type: 2}
+  InputB: {fileID: 11400000, guid: 11935fa8f1d5414dbf421f48c9da52bd, type: 2}
+  Output: {fileID: 11400000, guid: ae7710d8364642feb5e4b8f2dec15db9, type: 2}
+  CombineEventName: 

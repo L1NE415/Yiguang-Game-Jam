@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7428645386d92384a92de20e81588495, type: 3}
   m_Name: Recipe_P06_DongRiQing
   m_EditorClassIdentifier: Assembly-CSharp::ElementRecipe
-  InputA: {fileID: 11400000, guid: 3936b7ceaf5946c18090117fae98b658, type: 3}
-  InputB: {fileID: 11400000, guid: 535e1fed1a154c86a49813f7f54bbc52, type: 3}
-  Output: {fileID: 11400000, guid: c0f56a636b3b471db6b3aad420e1bc50, type: 3}
+  InputA: {fileID: 11400000, guid: 3936b7ceaf5946c18090117fae98b658, type: 2}
+  InputB: {fileID: 11400000, guid: 535e1fed1a154c86a49813f7f54bbc52, type: 2}
+  Output: {fileID: 11400000, guid: c0f56a636b3b471db6b3aad420e1bc50, type: 2}
   CombineEventName: 

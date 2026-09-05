@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0ebf875b05a0b4e8e4f6f84e42f8c7, type: 3}
+  m_Name: Element_Emotion_Cat
+  m_EditorClassIdentifier: Assembly-CSharp::Element
+  ElementId: Emotion_Cat
+  DisplayName: "\u4E91\u76D1\u5DE5\u732B"
+  Type: 0
+  Icon: {fileID: -967244358555946368, guid: 1b199a49828960f4d9b41d6a3236fef2, type: 3}
+  Description: "\u4E91\u7AEF\u5728\u5C97\u7684\u732B\u76D1\u5DE5\uFF0C\u6478\u9C7C\u4F1A\u88AB\u8BB0\u8FDB\u5C0F\u672C\u672C\u3002"
+  UseEventName: 
+  OnCraftedEventName: 

@@ -19,3 +19,4 @@ MonoBehaviour:
   Description: "\u7279\u6B8A\u5143\u7D20\uFF08\u5929\u6C14\uFF09P06 \u51AC\u65E5\u6674\uFF5C\u5149\uFF0B\u96EA\uFF5C\u6C34\u5206+1\uFF5C\u9633\u5149+3\uFF5C\u517B\u5206+3\uFF5C\u6E29\u548C\u5747\u8861"
   UseEventName: UseP06
   OnCraftedEventName: CraftedP06
+
