@@ -8,7 +8,7 @@ using UnityEngine;
 ///
 /// 职责：
 /// - 运行时存储元素库存（内存数据，不持久化、不存档）
-/// - 元素的存取、数量查询、容量限制
+/// - 元素的存取、数量查询（无数量限制，随便堆）
 ///
 /// 事件一览（在 Framwork.EventName 中定义）：
 /// - BackpackItemAdded(Element element, int added, int newCount)   元素被加入
@@ -36,13 +36,6 @@ using UnityEngine;
 /// </summary>
 public class BackpackSystem : Singleton<BackpackSystem>
 {
-    [Header("容量（0 表示不限制）")]
-    [Tooltip("单种元素的最大堆叠数")]
-    public int MaxStackPerElement = 99;
-
-    [Tooltip("背包总容量（所有元素累加，0 = 不限制）")]
-    public int MaxTotal = 0;
-
     // 内部存储：ScriptableObject 引用 -> 数量
     private readonly Dictionary<Element, int> _items = new Dictionary<Element, int>();
 
@@ -72,29 +65,12 @@ public class BackpackSystem : Singleton<BackpackSystem>
         => element != null && count > 0 && GetCount(element) >= count;
 
     /// <summary>
-    /// 添加元素到背包。返回实际加入的数量（受容量限制时可能少于 count）。
-    /// element 为 null、count &lt;= 0、容量已满等情况会返回 0 且不触发任何事件。
+    /// 添加元素到背包（无数量限制）。返回实际加入的数量。
+    /// element 为 null、count &lt;= 0 时返回 0 且不触发任何事件。
     /// </summary>
     public int Add(Element element, int count = 1)
     {
         if (element == null || count <= 0) return 0;
-
-        // 1. 总容量限制
-        if (MaxTotal > 0)
-        {
-            int room = MaxTotal - TotalCount;
-            if (room <= 0) return 0;
-            count = Mathf.Min(count, room);
-        }
-
-        // 2. 单种堆叠上限
-        if (MaxStackPerElement > 0)
-        {
-            int current = GetCount(element);
-            int room = MaxStackPerElement - current;
-            if (room <= 0) return 0;
-            count = Mathf.Min(count, room);
-        }
 
         int newCount = GetCount(element) + count;
         _items[element] = newCount;

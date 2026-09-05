@@ -32,6 +32,9 @@ public class Element : ScriptableObject
     [Tooltip("元素类型：基础 / 特殊")]
     public ElementType Type = ElementType.Basic;
 
+    [Tooltip("元素图标（UI 显示用，可留空）")]
+    public Sprite Icon;
+
     [TextArea, Tooltip("描述文案")]
     public string Description;
 
