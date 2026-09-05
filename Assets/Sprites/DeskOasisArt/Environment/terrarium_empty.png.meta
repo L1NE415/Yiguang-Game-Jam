@@ -1,0 +1,252 @@
+fileFormatVersion: 2
+guid: 5f4eba10d1e73d346bd201cc08afc65d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4191240876571434772
+    second: terrarium_empty_0
+  - first:
+      213: -8539811602356766850
+    second: terrarium_empty_1
+  - first:
+      213: 3608741283639845363
+    second: terrarium_empty_2
+  - first:
+      213: -932361301657207967
+    second: terrarium_empty_3
+  - first:
+      213: 1010195529751354235
+    second: terrarium_empty_4
+  - first:
+      213: -3760947162184712404
+    second: terrarium_empty_5
+  - first:
+      213: 2429284549902076039
+    second: terrarium_empty_6
+  - first:
+      213: -959487715197618751
+    second: terrarium_empty_7
+  - first:
+      213: -1677806051950491021
+    second: terrarium_empty_8
+  - first:
+      213: -4056696283152232824
+    second: terrarium_empty_9
+  - first:
+      213: 7753651509845018289
+    second: terrarium_empty_10
+  - first:
+      213: -6397259825570439456
+    second: terrarium_empty_11
+  - first:
+      213: 4948171483171030177
+    second: terrarium_empty_12
+  - first:
+      213: 5381720521107635062
+    second: terrarium_empty_13
+  - first:
+      213: -7312016355178874818
+    second: terrarium_empty_14
+  - first:
+      213: -7950126542518990403
+    second: terrarium_empty_15
+  - first:
+      213: -5993752260383595800
+    second: terrarium_empty_16
+  - first:
+      213: 1943134811960036409
+    second: terrarium_empty_17
+  - first:
+      213: -1912816034944681548
+    second: terrarium_empty_18
+  - first:
+      213: 249079844270369772
+    second: terrarium_empty_19
+  - first:
+      213: 2502206584530588811
+    second: terrarium_empty_20
+  - first:
+      213: -8072401574540582905
+    second: terrarium_empty_21
+  - first:
+      213: 4898322953171854826
+    second: terrarium_empty_22
+  - first:
+      213: -6208738220741591460
+    second: terrarium_empty_23
+  - first:
+      213: 7779183225016444599
+    second: terrarium_empty_24
+  - first:
+      213: 9206059181110975429
+    second: terrarium_empty_25
+  - first:
+      213: 1091056322556999428
+    second: terrarium_empty_26
+  - first:
+      213: -1077083998634619084
+    second: terrarium_empty_27
+  - first:
+      213: 1312961784886991559
+    second: terrarium_empty_28
+  - first:
+      213: -588458156159870220
+    second: terrarium_empty_29
+  - first:
+      213: 4123947927898278311
+    second: terrarium_empty_30
+  - first:
+      213: -6393262998299499601
+    second: terrarium_empty_31
+  - first:
+      213: 5110276846706913958
+    second: terrarium_empty_32
+  - first:
+      213: -7006345739811210773
+    second: terrarium_empty_33
+  - first:
+      213: -1965781908609330661
+    second: terrarium_empty_34
+  - first:
+      213: -9196280664812789821
+    second: terrarium_empty_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: terrarium_empty_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce0ecdff0a8b5d5c0800000000000000
+      internalID: -4191240876571434772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e0f222576f15354784f5ee1410dbf94
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceOnImport
+        value: True
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":true,"gridCellCount":{"x":3.0,"y":2.0},"gridSpriteSize":{"x":1024.0,"y":1024.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      terrarium_empty_0: -4191240876571434772
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

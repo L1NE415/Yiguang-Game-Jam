@@ -1,0 +1,216 @@
+fileFormatVersion: 2
+guid: 31cb407f574f98241b512ad498f9a3b8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1006828343369817327
+    second: ui_button_primary_0
+  - first:
+      213: 4817862764332884470
+    second: ui_button_primary_1
+  - first:
+      213: -2390290397133056179
+    second: ui_button_primary_2
+  - first:
+      213: -7850560617643006435
+    second: ui_button_primary_3
+  - first:
+      213: 2709974259233196409
+    second: ui_button_primary_4
+  - first:
+      213: 9173440137943226193
+    second: ui_button_primary_5
+  - first:
+      213: 5123614065718734465
+    second: ui_button_primary_6
+  - first:
+      213: -6986802183105554478
+    second: ui_button_primary_7
+  - first:
+      213: 8023586501320140381
+    second: ui_button_primary_8
+  - first:
+      213: -8207949311433907281
+    second: ui_button_primary_9
+  - first:
+      213: -1519578192651264643
+    second: ui_button_primary_10
+  - first:
+      213: 6388161317826243074
+    second: ui_button_primary_11
+  - first:
+      213: -1967972578179241173
+    second: ui_button_primary_12
+  - first:
+      213: 1690066100081787492
+    second: ui_button_primary_13
+  - first:
+      213: -5110842910478835624
+    second: ui_button_primary_14
+  - first:
+      213: 4932341821739069436
+    second: ui_button_primary_15
+  - first:
+      213: 8004876572626575318
+    second: ui_button_primary_16
+  - first:
+      213: -5513299900892885305
+    second: ui_button_primary_17
+  - first:
+      213: -336540702910057249
+    second: ui_button_primary_18
+  - first:
+      213: 1719976849035134216
+    second: ui_button_primary_19
+  - first:
+      213: 5257581308983497635
+    second: ui_button_primary_20
+  - first:
+      213: -5152702193450889260
+    second: ui_button_primary_21
+  - first:
+      213: 8626034669440749783
+    second: ui_button_primary_22
+  - first:
+      213: 6290005321565108645
+    second: ui_button_primary_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ui_button_primary_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71f6c22a3e468954c920771093a1e03f
+      internalID: -1044941295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 46015069c4d3bd94b9f474071937c186
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":true,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":512.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      - key: SpriteEditor.SliceOnImport
+        value: True
+    nameFileIdTable:
+      ui_button_primary_0: -1044941295
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

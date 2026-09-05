@@ -1,0 +1,29 @@
+path,category,size,alpha,usage
+Backgrounds/bg_office_day.png,background,1920x1080,no,main scene background
+Environment/terrarium_empty.png,environment,1024x1024,yes,main terrarium layer
+Plants/plant_seed.png,plant,1024x1024,yes,growth stage 0
+Plants/plant_sprout.png,plant,1024x1024,yes,growth stage 1
+Plants/plant_mature.png,plant,1024x1024,yes,growth stage 2
+Plants/plant_wilted.png,plant,1024x1024,yes,dying state
+WeatherOverlays/weather_light.png,weather,1024x1024,yes,light module
+WeatherOverlays/weather_water.png,weather,1024x1024,yes,water module
+WeatherOverlays/weather_sand.png,weather,1024x1024,yes,sand module
+WeatherOverlays/weather_wind.png,weather,1024x1024,yes,wind module
+WeatherOverlays/weather_thunder.png,weather,1024x1024,yes,thunder module
+WeatherOverlays/weather_snow.png,weather,1024x1024,yes,snow module
+Items/BaseElements/element_light.png,item,1024x1024,yes,inventory icon
+Items/BaseElements/element_water.png,item,1024x1024,yes,inventory icon
+Items/BaseElements/element_sand.png,item,1024x1024,yes,inventory icon
+Items/BaseElements/element_wind.png,item,1024x1024,yes,inventory icon
+Items/BaseElements/element_thunder.png,item,1024x1024,yes,inventory icon
+Items/BaseElements/element_snow.png,item,1024x1024,yes,inventory icon
+UI/ui_panel_inventory.png,ui,1024x384,yes,inventory panel or 9-slice source
+UI/ui_button_primary.png,ui,512x256,yes,primary button
+UI/ui_slot_synthesis.png,ui,512x512,yes,synthesis slot
+UI/ui_slot_inventory.png,ui,512x512,yes,item slot
+UI/ui_resource_bar_empty.png,ui,512x128,yes,resource bar frame
+UI/ResourceIcons/icon_water.png,ui icon,256x256,yes,moisture icon
+UI/ResourceIcons/icon_sunlight.png,ui icon,256x256,yes,sunlight icon
+UI/ResourceIcons/icon_nutrient.png,ui icon,256x256,yes,nutrient icon
+Masks/terrarium_weather_mask.png,mask,1024x1024,yes,clip weather to globe
+
