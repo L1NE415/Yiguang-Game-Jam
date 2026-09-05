@@ -1,55 +1,10 @@
 fileFormatVersion: 2
-guid: 6f333b38e55b17f42b859746011d015c
+guid: 9bf21369bd0afc54e95df8e3794adc7a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1310954051630189606
-    second: ui_resource_bar_empty_0
-  - first:
-      213: 6924372299929211597
-    second: ui_resource_bar_empty_1
-  - first:
-      213: -1154876902362996515
-    second: ui_resource_bar_empty_2
-  - first:
-      213: 4857489527018152087
-    second: ui_resource_bar_empty_3
-  - first:
-      213: 4944732513018598811
-    second: ui_resource_bar_empty_4
-  - first:
-      213: -2337762503999256148
-    second: ui_resource_bar_empty_5
-  - first:
-      213: -2539508611566900549
-    second: ui_resource_bar_empty_6
-  - first:
-      213: 3974362406964956142
-    second: ui_resource_bar_empty_7
-  - first:
-      213: 6971476488422895872
-    second: ui_resource_bar_empty_8
-  - first:
-      213: -1614265251558621409
-    second: ui_resource_bar_empty_9
-  - first:
-      213: 1144071322738111217
-    second: ui_resource_bar_empty_10
-  - first:
-      213: 522910134555138389
-    second: ui_resource_bar_empty_11
-  - first:
-      213: 2263938913728163016
-    second: ui_resource_bar_empty_12
-  - first:
-      213: 5488880306273508806
-    second: ui_resource_bar_empty_13
-  - first:
-      213: 5663969112857198298
-    second: ui_resource_bar_empty_14
-  - first:
-      213: -2807306716725604351
-    second: ui_resource_bar_empty_15
+      213: 1815393756713265281
+    second: ui_event_close_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -145,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ui_resource_bar_empty_0
+      name: ui_event_close_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 39
-        width: 467
-        height: 50
+        x: 7
+        y: 7
+        width: 82
+        height: 82
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 16}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 46ec4a83e59402a4e98699122a493441
-      internalID: -608650226
+      spriteID: 1882b5cd003913910800000000000000
+      internalID: 1815393756713265281
       vertices: []
       indices: 
       edges: []
@@ -170,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a55c3341ec8abcf4c961bde99b18ba92
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -178,13 +133,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceOnImport
-        value: False
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":512.0,"y":128.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      ui_resource_bar_empty_0: -608650226
+      ui_event_close_0: 1815393756713265281
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

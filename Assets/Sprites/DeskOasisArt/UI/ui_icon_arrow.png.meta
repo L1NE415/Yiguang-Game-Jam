@@ -1,55 +1,10 @@
 fileFormatVersion: 2
-guid: 6f333b38e55b17f42b859746011d015c
+guid: d96cffed512465140963624cb51780ea
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1310954051630189606
-    second: ui_resource_bar_empty_0
-  - first:
-      213: 6924372299929211597
-    second: ui_resource_bar_empty_1
-  - first:
-      213: -1154876902362996515
-    second: ui_resource_bar_empty_2
-  - first:
-      213: 4857489527018152087
-    second: ui_resource_bar_empty_3
-  - first:
-      213: 4944732513018598811
-    second: ui_resource_bar_empty_4
-  - first:
-      213: -2337762503999256148
-    second: ui_resource_bar_empty_5
-  - first:
-      213: -2539508611566900549
-    second: ui_resource_bar_empty_6
-  - first:
-      213: 3974362406964956142
-    second: ui_resource_bar_empty_7
-  - first:
-      213: 6971476488422895872
-    second: ui_resource_bar_empty_8
-  - first:
-      213: -1614265251558621409
-    second: ui_resource_bar_empty_9
-  - first:
-      213: 1144071322738111217
-    second: ui_resource_bar_empty_10
-  - first:
-      213: 522910134555138389
-    second: ui_resource_bar_empty_11
-  - first:
-      213: 2263938913728163016
-    second: ui_resource_bar_empty_12
-  - first:
-      213: 5488880306273508806
-    second: ui_resource_bar_empty_13
-  - first:
-      213: 5663969112857198298
-    second: ui_resource_bar_empty_14
-  - first:
-      213: -2807306716725604351
-    second: ui_resource_bar_empty_15
+      213: -6125522474655694791
+    second: ui_icon_arrow_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -91,9 +46,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -145,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ui_resource_bar_empty_0
+      name: ui_icon_arrow_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 39
-        width: 467
-        height: 50
+        x: 36
+        y: 50
+        width: 310
+        height: 155
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 16}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 46ec4a83e59402a4e98699122a493441
-      internalID: -608650226
+      spriteID: 930c97283c5cdfaa0800000000000000
+      internalID: -6125522474655694791
       vertices: []
       indices: 
       edges: []
@@ -170,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a55c3341ec8abcf4c961bde99b18ba92
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -178,13 +133,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceOnImport
-        value: False
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":512.0,"y":128.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      ui_resource_bar_empty_0: -608650226
+      ui_icon_arrow_0: -6125522474655694791
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

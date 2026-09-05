@@ -1,19 +1,31 @@
 fileFormatVersion: 2
-guid: 1b199a49828960f4d9b41d6a3236fef2
+guid: eb295fbb39f61d541ab70884586604fd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6742306058058976856
-    second: Potato-Sheet_0
+      213: 3368338482275942649
+    second: Event Icon_0
   - first:
-      213: 1337066383209952790
-    second: Potato-Sheet_1
+      213: 4099630316804142028
+    second: Event Icon_1
   - first:
-      213: -2748597537486231041
-    second: Potato-Sheet_2
+      213: -3193596746137217055
+    second: Event Icon_2
   - first:
-      213: -967244358555946368
-    second: Potato-Sheet_3
+      213: -3311445501793164497
+    second: Event Icon_3
+  - first:
+      213: -719052606462289957
+    second: Event Icon_4
+  - first:
+      213: 5934830813856471108
+    second: Event Icon_5
+  - first:
+      213: -7906136864840648007
+    second: Event Icon_6
+  - first:
+      213: -495761561905087292
+    second: Event Icon_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,7 +72,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -81,10 +93,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,43 +117,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 1024
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 1024
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Potato-Sheet_0
+      name: Event Icon_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 0
-        width: 12
-        height: 9
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +136,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8a13e6acc548e62a0800000000000000
-      internalID: -6742306058058976856
+      spriteID: 9f0065fd00ebebe20800000000000000
+      internalID: 3368338482275942649
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potato-Sheet_1
+      name: Event Icon_1
       rect:
         serializedVersion: 2
-        x: 17
+        x: 256
         y: 0
-        width: 14
-        height: 13
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 616785c9ac63e8210800000000000000
-      internalID: 1337066383209952790
+      spriteID: cc378876d00d4e830800000000000000
+      internalID: 4099630316804142028
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potato-Sheet_2
+      name: Event Icon_2
       rect:
         serializedVersion: 2
-        x: 32
+        x: 512
         y: 0
-        width: 17
-        height: 16
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +180,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ff9ae933a150bd9d0800000000000000
-      internalID: -2748597537486231041
+      spriteID: 1e7d5a60ea01ea3d0800000000000000
+      internalID: -3193596746137217055
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potato-Sheet_3
+      name: Event Icon_3
       rect:
         serializedVersion: 2
-        x: 48
+        x: 768
         y: 0
-        width: 16
-        height: 16
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,8 +202,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 082b54d6168a392f0800000000000000
-      internalID: -967244358555946368
+      spriteID: f23ad846cd16b02d0800000000000000
+      internalID: -3311445501793164497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event Icon_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd71ff0d6796506f0800000000000000
+      internalID: -719052606462289957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event Icon_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44815fd5e21cc5250800000000000000
+      internalID: 5934830813856471108
       vertices: []
       indices: 
       edges: []
@@ -226,7 +256,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c6e6dc9c81cc14643880d5b3c2e21e51
+    spriteID: de2c7882b0148f14dae07da97c4a718b
     internalID: 0
     vertices: []
     indices: 
@@ -234,12 +264,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":256.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Potato-Sheet_0: -6742306058058976856
-      Potato-Sheet_1: 1337066383209952790
-      Potato-Sheet_2: -2748597537486231041
-      Potato-Sheet_3: -967244358555946368
+      Event Icon_0: 3368338482275942649
+      Event Icon_1: 4099630316804142028
+      Event Icon_2: -3193596746137217055
+      Event Icon_3: -3311445501793164497
+      Event Icon_4: -719052606462289957
+      Event Icon_5: 5934830813856471108
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
