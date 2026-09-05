@@ -8,7 +8,7 @@ using UnityEngine;
 ///
 /// 职责：
 /// - 运行时存储元素库存（内存数据，不持久化、不存档）
-/// - 元素的存取、数量查询（无数量限制，随便堆）
+/// - 元素的存取、数量查询（基础元素不限量；特殊元素每种有堆叠上限，见 specialElementMaxCount）
 ///
 /// 事件一览（在 Framwork.EventName 中定义）：
 /// - BackpackItemAdded(Element element, int added, int newCount)   元素被加入
@@ -36,8 +36,43 @@ using UnityEngine;
 /// </summary>
 public class BackpackSystem : Singleton<BackpackSystem>
 {
+    [Header("双背包配置")]
+    [Tooltip("开局自动补进背包的基础元素（每种至少 1 个；基础元素背包始终有这些元素）")]
+    [SerializeField] private List<Element> initialBasicElements = new List<Element>();
+
+    [Tooltip("基础元素是否不可被移除（勾选后基础元素始终保留在背包里）")]
+    [SerializeField] private bool keepBasicElementsAlways = true;
+
+    [Tooltip("每种特殊元素的最大堆叠数量（0 = 不限制）。基础元素不受影响")]
+    [SerializeField] private int specialElementMaxCount = 3;
+
+    [Header("调试（只读）")]
+    [Tooltip("当前背包内容快照（每次库存变化自动刷新，仅用于 Inspector 查看）")]
+    [SerializeField] private List<string> debugItems = new List<string>();
+
     // 内部存储：ScriptableObject 引用 -> 数量
     private readonly Dictionary<Element, int> _items = new Dictionary<Element, int>();
+
+    protected override void Awake()
+    {
+        base.Awake();
+        // 只有真正的单例实例才做初始化（重复实例在 base.Awake 里已被销毁）
+        if (Instance == this)
+            EnsureInitialBasicElements();
+    }
+
+    /// <summary>
+    /// 把 Inspector 里配置的基础元素补进背包（每种已有则跳过，不叠加数量）。
+    /// Awake 时自动调用；运行时改了配置也可以手动再调。
+    /// </summary>
+    public void EnsureInitialBasicElements()
+    {
+        foreach (var element in initialBasicElements)
+        {
+            if (element != null && GetCount(element) == 0)
+                Add(element, 1);
+        }
+    }
 
     /// <summary>当前总元素数（所有种类累加）</summary>
     public int TotalCount
@@ -53,6 +88,16 @@ public class BackpackSystem : Singleton<BackpackSystem>
     /// <summary>当前拥有的所有元素（用于 UI 遍历，顺序按 Add 先后）</summary>
     public IEnumerable<Element> AllElements => _items.Keys;
 
+    /// <summary>查询指定类型的所有元素（Basic = 基础元素背包，Special = 合成物背包）</summary>
+    public IEnumerable<Element> GetElements(ElementType type)
+    {
+        foreach (var e in _items.Keys)
+        {
+            if (e != null && e.Type == type)
+                yield return e;
+        }
+    }
+
     /// <summary>查询某元素当前数量（没有则返回 0）</summary>
     public int GetCount(Element element)
     {
@@ -65,18 +110,47 @@ public class BackpackSystem : Singleton<BackpackSystem>
         => element != null && count > 0 && GetCount(element) >= count;
 
     /// <summary>
-    /// 添加元素到背包（无数量限制）。返回实际加入的数量。
+    /// 是否还能加入 count 个该元素（特殊元素受堆叠上限约束，基础元素始终为 true）。
+    /// 合成前可用它预检容量，避免"合成成功但产物装不下"。
+    /// </summary>
+    public bool CanAdd(Element element, int count = 1)
+    {
+        if (element == null || count <= 0) return false;
+        // 上限为 0 表示不限制；非特殊元素也不受限制
+        if (element.Type != ElementType.Special || specialElementMaxCount <= 0)
+            return true;
+        return GetCount(element) + count <= specialElementMaxCount;
+    }
+
+    /// <summary>
+    /// 添加元素到背包。返回实际加入的数量（特殊元素达到堆叠上限时可能少于 count 甚至为 0）。
     /// element 为 null、count &lt;= 0 时返回 0 且不触发任何事件。
     /// </summary>
     public int Add(Element element, int count = 1)
     {
         if (element == null || count <= 0) return 0;
 
-        int newCount = GetCount(element) + count;
+        int current = GetCount(element);
+
+        // 特殊元素堆叠上限：已满直接拒绝，未满则裁剪到剩余空间
+        if (element.Type == ElementType.Special && specialElementMaxCount > 0)
+        {
+            int free = specialElementMaxCount - current;
+            if (free <= 0)
+            {
+                Debug.LogWarning($"[BackpackSystem] 特殊元素 {element} 已达堆叠上限 {specialElementMaxCount}，无法再加入");
+                return 0;
+            }
+            if (count > free)
+                count = free; // 只装得下一部分：按剩余空间裁剪
+        }
+
+        int newCount = current + count;
         _items[element] = newCount;
 
         EventCenter.Trigger(EventName.BackpackItemAdded, element, count, newCount);
         EventCenter.Trigger(EventName.BackpackChanged);
+        UpdateDebugView();
         return count;
     }
 
@@ -87,6 +161,14 @@ public class BackpackSystem : Singleton<BackpackSystem>
     public bool Remove(Element element, int count = 1)
     {
         if (element == null || count <= 0) return false;
+
+        // 基础元素始终保留（可配置）：保证基础元素背包里始终有初始元素
+        if (keepBasicElementsAlways && element.Type == ElementType.Basic)
+        {
+            Debug.LogWarning($"[BackpackSystem] 基础元素 {element} 不可移除（始终保留）");
+            return false;
+        }
+
         int current = GetCount(element);
         if (current < count) return false;
 
@@ -98,14 +180,38 @@ public class BackpackSystem : Singleton<BackpackSystem>
 
         EventCenter.Trigger(EventName.BackpackItemRemoved, element, count, newCount);
         EventCenter.Trigger(EventName.BackpackChanged);
+        UpdateDebugView();
         return true;
     }
 
-    /// <summary>清空背包（无变化时不触发事件）</summary>
+    /// <summary>清空背包（无变化时不触发事件；保留基础元素时只清空特殊元素）</summary>
     public void Clear()
     {
         if (_items.Count == 0) return;
         _items.Clear();
+        // 基础元素需要"始终有"：清空后立即补回初始基础元素
+        if (keepBasicElementsAlways)
+            EnsureInitialBasicElements();
         EventCenter.Trigger(EventName.BackpackChanged);
+        UpdateDebugView();
+    }
+
+    /// <summary>刷新 Inspector 调试列表（"名称(类型) x数量"每行一条；编辑器外为空操作）</summary>
+    private void UpdateDebugView()
+    {
+#if UNITY_EDITOR
+        debugItems.Clear();
+        foreach (var kv in _items)
+            debugItems.Add($"{kv.Key.DisplayName}({kv.Key.Type}) x{kv.Value}");
+#endif
+    }
+
+    /// <summary>把当前背包内容打印到 Console（右键组件菜单也可调用）</summary>
+    [ContextMenu("打印背包内容")]
+    private void LogItems()
+    {
+        if (_items.Count == 0) { Debug.Log("[BackpackSystem] 背包为空"); return; }
+        foreach (var kv in _items)
+            Debug.Log($"[BackpackSystem] {kv.Key.DisplayName}({kv.Key.Type}) x{kv.Value}");
     }
 }

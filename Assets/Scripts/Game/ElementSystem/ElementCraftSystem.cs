@@ -39,6 +39,20 @@ public class ElementCraftSystem : Singleton<ElementCraftSystem>
     [Tooltip("合成配方列表")]
     public List<ElementRecipe> Recipes = new List<ElementRecipe>();
 
+    [Tooltip("勾选后若 Recipes 列表为空，启动时自动加载 Resources/ElementRecipes 下的所有配方资产（当前项目为手动拖入配置，此开关留作备用）")]
+    [SerializeField] private bool autoLoadFromResources = true;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        // 只有真正的单例实例才做初始化（重复实例在 base.Awake 里已被销毁）
+        if (Instance == this && autoLoadFromResources && Recipes.Count == 0)
+        {
+            Recipes.AddRange(Resources.LoadAll<ElementRecipe>("ElementRecipes"));
+            Debug.Log($"[ElementCraftSystem] 自动加载配方 {Recipes.Count} 条（Resources/ElementRecipes）");
+        }
+    }
+
     // ==================== 合成 ====================
 
     /// <summary>
@@ -66,6 +80,15 @@ public class ElementCraftSystem : Singleton<ElementCraftSystem>
             {
                 Debug.LogError($"[ElementCraftSystem] 配方 {a}+{b} 的产物为空，请检查配方");
                 continue;
+            }
+
+            // 0. 背包容量兜底预检：产物已达堆叠上限时视为合成失败，
+            //    避免触发合成成功事件后材料被下游消耗、产物却装不进背包
+            if (BackpackSystem.Instance != null && !BackpackSystem.Instance.CanAdd(result, 1))
+            {
+                Debug.Log($"[ElementCraftSystem] 合成失败：产物 {result} 已达背包堆叠上限");
+                EventCenter.Trigger(EventName.ElementCombineFailed, a, b);
+                return false;
             }
 
             // 1. 全局合成成功事件
@@ -106,11 +129,14 @@ public class ElementCraftSystem : Singleton<ElementCraftSystem>
     // ==================== 使用 ====================
 
     /// <summary>
-    /// 使用元素：广播全局 ElementUsed 事件。
-    /// 若该元素配置了 UseEventName，还会额外触发该自定义事件（参数：本元素）。
-    /// 具体使用效果（伤害、治疗、种植加成等）由各系统监听事件自行实现。
+    /// 使用元素：广播全局 ElementUsed 事件（参数：元素 + 目标植物）。
+    /// 若该元素配置了 UseEventName，还会额外触发该自定义事件（参数：元素 + 目标植物）。
+    /// 具体使用效果由 ElementUseEffectLibrary（数值表）等订阅方实现；
+    /// 拖拽到植物身上使用的入口在 DragHandle.TryUseOnPlant，也走同一套事件。
     /// </summary>
-    public void Use(Element element)
+    /// <param name="element">使用的元素</param>
+    /// <param name="targetPlant">目标植物（可空：不是对植物使用时不传）</param>
+    public void Use(Element element, Plant targetPlant = null)
     {
         if (element == null)
         {
@@ -119,12 +145,12 @@ public class ElementCraftSystem : Singleton<ElementCraftSystem>
         }
 
         // 1. 全局"元素被使用"事件
-        EventCenter.Trigger(EventName.ElementUsed, element);
+        EventCenter.Trigger(EventName.ElementUsed, element, targetPlant);
 
         // 2. 该元素自己的使用事件（不同元素不同事件的关键）
         if (!string.IsNullOrEmpty(element.UseEventName))
-            EventCenter.Trigger(element.UseEventName, element);
+            EventCenter.Trigger(element.UseEventName, element, targetPlant);
 
-        Debug.Log($"[ElementCraftSystem] 使用元素：{element}");
+        Debug.Log($"[ElementCraftSystem] 使用元素：{element}" + (targetPlant != null ? $" → {targetPlant.name}" : string.Empty));
     }
 }
