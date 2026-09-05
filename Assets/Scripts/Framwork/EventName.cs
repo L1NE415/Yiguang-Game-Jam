@@ -23,6 +23,12 @@ namespace Framwork
         /// <summary>植物被重置回种子阶段（参数：Plant 植物实例；收获后再种一轮 / 重开一局）</summary>
         public const string PlantReset = "PlantReset";
 
+        /// <summary>
+        /// 植物最终形态锁定（参数：Plant 植物实例，PlantFinalForm 锁定的形态）。
+        /// 第二阶段期间某形态条件的属性区间连续保持超过判定时长时触发，锁定后不再变化。
+        /// </summary>
+        public const string PlantFinalFormDetermined = "PlantFinalFormDetermined";
+
         // ---------- 元素合成系统 ----------
 
         /// <summary>元素合成成功（参数：Element 原料A，Element 原料B，Element 产物）</summary>
@@ -68,5 +74,13 @@ namespace Framwork
 
         /// <summary>背包任意变化的总开关（无参数；UI 刷新用这个最方便）</summary>
         public const string BackpackChanged = "BackpackChanged";
+
+        // ---------- 突发事件系统 ----------
+
+        /// <summary>
+        /// 突发事件触发（参数：string 事件标题，string 提示文案）。
+        /// 仅特殊事件触发（普通事件静默发放奖励），由提示框 UI 订阅后显示。
+        /// </summary>
+        public const string RandomEventTriggered = "RandomEventTriggered";
     }
 }

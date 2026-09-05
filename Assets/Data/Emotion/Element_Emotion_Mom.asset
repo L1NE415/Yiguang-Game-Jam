@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0ebf875b05a0b4e8e4f6f84e42f8c7, type: 3}
+  m_Name: Element_Emotion_Mom
+  m_EditorClassIdentifier: Assembly-CSharp::Element
+  ElementId: Emotion_Mom
+  DisplayName: "\u5988\u5988\u768460\u79D2"
+  Type: 0
+  Icon: {fileID: -967244358555946368, guid: 1b199a49828960f4d9b41d6a3236fef2, type: 3}
+  Description: "\u4E00\u6761 60 \u79D2\u7684\u8BED\u97F3\u65B9\u9635\uFF0C\u53E5\u53E5\u90FD\u662F\u7231\u4E0E\u7275\u6302\u3002"
+  UseEventName: 
+  OnCraftedEventName: 

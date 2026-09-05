@@ -36,10 +36,20 @@ namespace Game.BackpackSystem
 
             if (icon != null)
             {
-                icon.sprite = element != null ? element.Icon : null;
-                icon.color = Color.white;
                 // 图标要接收射线（DragHandle 靠它触发拖拽），保持 true
                 icon.raycastTarget = true;
+                if (element != null && element.Icon != null)
+                {
+                    icon.sprite = element.Icon;
+                    icon.color = Color.white;
+                    icon.enabled = true;
+                }
+                else
+                {
+                    // 没有图标数据（比如动态创建的情绪元素）时隐藏 Image，避免显示成白块
+                    icon.sprite = null;
+                    icon.enabled = false;
+                }
             }
 
             if (countText != null)

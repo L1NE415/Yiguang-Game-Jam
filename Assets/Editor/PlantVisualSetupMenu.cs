@@ -54,14 +54,47 @@ public static class PlantVisualSetupMenu
             so.FindProperty("sproutSprite").objectReferenceValue = sprites[1];
             so.FindProperty("matureSprite").objectReferenceValue = sprites[2];
             so.FindProperty("deadSprite").objectReferenceValue = sprites[3];
+
+            // 最终形态贴图：按名字关键字在全部 Sprite 里搜索（含图集子资产），找不到保持为空
+            so.FindProperty("pothosSprite").objectReferenceValue = FindSpriteByName("绿萝", "Pothos");
+            so.FindProperty("cactusSprite").objectReferenceValue = FindSpriteByName("仙人掌", "Cactus");
+            so.FindProperty("flytrapSprite").objectReferenceValue = FindSpriteByName("捕蝇草", "Flytrap");
+
             so.ApplyModifiedPropertiesWithoutUndo();
             EditorUtility.SetDirty(vc);
             done++;
         }
 
         EditorUtility.DisplayDialog("植物可视化",
-            $"已为 {done} 个植物挂载并填好阶段精灵。\n\n映射：种子=_0  发芽=_1  成熟=_2  枯萎=_3\n点击顶部 Play 即可看到植物随生长阶段自动换贴图。",
+            $"已为 {done} 个植物挂载并填好阶段精灵。\n\n" +
+            "基础映射：种子=_0  发芽=_1  成熟=_2  枯萎=_3\n" +
+            "最终形态贴图（绿萝/仙人掌/捕蝇草）按精灵名字自动搜索，\n" +
+            "未找到的保持为空——进入第三阶段时会回退到默认成熟贴图 _2。",
             "好的");
+    }
+
+    /// <summary>
+    /// 在 Assets 下全部 Sprite（含图集子资产）里按名字关键字查找第一个匹配的精灵。
+    /// 例如精灵或其图集切片名含 "绿萝" / "Pothos" 即认为是绿萝贴图。
+    /// </summary>
+    private static Sprite FindSpriteByName(params string[] keywords)
+    {
+        foreach (string guid in AssetDatabase.FindAssets("t:Sprite", new[] { "Assets" }))
+        {
+            string path = AssetDatabase.GUIDToAssetPath(guid);
+            foreach (var loaded in AssetDatabase.LoadAllAssetsAtPath(path))
+            {
+                if (loaded is Sprite s)
+                {
+                    foreach (var kw in keywords)
+                    {
+                        if (!string.IsNullOrEmpty(kw) && s.name.Contains(kw))
+                            return s;
+                    }
+                }
+            }
+        }
+        return null;
     }
 
     /// <summary>读取图集内所有切片精灵，按名字排序（_0.._3）</summary>

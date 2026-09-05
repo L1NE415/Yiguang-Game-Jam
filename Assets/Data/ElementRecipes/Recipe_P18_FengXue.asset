@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7428645386d92384a92de20e81588495, type: 3}
   m_Name: Recipe_P18_FengXue
   m_EditorClassIdentifier: Assembly-CSharp::ElementRecipe
-  InputA: {fileID: 11400000, guid: 06c46afcb68c4df99f70aebaf70c72dc, type: 3}
-  InputB: {fileID: 11400000, guid: 535e1fed1a154c86a49813f7f54bbc52, type: 3}
-  Output: {fileID: 11400000, guid: 696ddc8530b547d48b6a1fba0736d998, type: 3}
+  InputA: {fileID: 11400000, guid: 06c46afcb68c4df99f70aebaf70c72dc, type: 2}
+  InputB: {fileID: 11400000, guid: 535e1fed1a154c86a49813f7f54bbc52, type: 2}
+  Output: {fileID: 11400000, guid: 696ddc8530b547d48b6a1fba0736d998, type: 2}
   CombineEventName: 
