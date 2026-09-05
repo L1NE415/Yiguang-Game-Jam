@@ -45,5 +45,16 @@ namespace Framwork
 
         /// <summary>Buff 结束（参数：PlantBuff 结束的 Buff，含到期与手动移除）</summary>
         public const string BuffRemoved = "BuffRemoved";
+
+        // ---------- 背包系统 ----------
+
+        /// <summary>背包加入元素（参数：Element 加入的元素，int 实际加入数量，int 加入后该元素总数）</summary>
+        public const string BackpackItemAdded = "BackpackItemAdded";
+
+        /// <summary>背包移除元素（参数：Element 移除的元素，int 实际移除数量，int 移除后该元素总数；归零时 newCount=0）</summary>
+        public const string BackpackItemRemoved = "BackpackItemRemoved";
+
+        /// <summary>背包任意变化的总开关（无参数；UI 刷新用这个最方便）</summary>
+        public const string BackpackChanged = "BackpackChanged";
     }
 }
