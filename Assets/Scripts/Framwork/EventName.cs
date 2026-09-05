@@ -11,6 +11,15 @@ namespace Framwork
         /// <summary>植物生长阶段变化（参数：Plant 植物实例，GrowthStage 新阶段）</summary>
         public const string PlantStageChange = "PlantStageChange";
 
+        /// <summary>植物完全成熟（参数：Plant 植物实例；三个阶段全部长满）</summary>
+        public const string PlantFullyGrown = "PlantFullyGrown";
+
+        /// <summary>
+        /// 植物阶段超时失败（参数：Plant 植物实例，GrowthStage 失败的阶段）。
+        /// 规定时间内未满足需求时触发，由游戏管理脚本订阅后判定游戏结束。
+        /// </summary>
+        public const string PlantFailed = "PlantFailed";
+
         // ---------- 元素合成系统 ----------
 
         /// <summary>元素合成成功（参数：Element 原料A，Element 原料B，Element 产物）</summary>
