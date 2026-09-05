@@ -18,6 +18,11 @@ using UnityEngine;
 /// 此外，配方 / 元素上配置的自定义事件名会在对应时机额外触发，
 /// 实现"不同的元素、不同的合成触发不同的事件"。
 ///
+/// 原料 / 产物：
+/// - 本系统不负责原料扣除（请由调用方根据需求自行处理）
+/// - 合成成功后，若场景中存在 BackpackSystem，会自动把产物 +1 入背包
+///   （BackpackSystem 未挂载时安全跳过，不报错）
+///
 /// 用法示例：
 /// <code>
 /// // 任意脚本调用
@@ -38,9 +43,10 @@ public class ElementCraftSystem : Singleton<ElementCraftSystem>
 
     /// <summary>
     /// 尝试合成两个元素（顺序无关）。
-    /// 成功：广播 ElementCombined + 配方自定义事件 + 产物 OnCrafted 事件，返回 true
+    /// 成功：广播 ElementCombined + 配方自定义事件 + 产物 OnCrafted 事件，
+    ///      若场景中存在 BackpackSystem 则把产物 +1 自动入背包，返回 true
     /// 失败：广播 ElementCombineFailed，返回 false
-    /// 注意：本系统不管理元素持有/消耗（背包逻辑），是否扣除原料由调用方决定。
+    /// 注意：本系统不管理原料扣除（背包逻辑），是否扣除原料由调用方决定。
     /// </summary>
     public bool TryCombine(Element a, Element b)
     {
@@ -72,6 +78,9 @@ public class ElementCraftSystem : Singleton<ElementCraftSystem>
             // 3. 产物元素自己的"被合成"事件
             if (!string.IsNullOrEmpty(result.OnCraftedEventName))
                 EventCenter.Trigger(result.OnCraftedEventName, result);
+
+            // 4. 若场景中有背包系统，产物自动入库（未挂载时安全跳过）
+            BackpackSystem.Instance?.Add(result, 1);
 
             Debug.Log($"[ElementCraftSystem] 合成成功：{a} + {b} = {result}");
             return true;
