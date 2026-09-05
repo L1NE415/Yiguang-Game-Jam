@@ -15,7 +15,7 @@ MonoBehaviour:
   ElementId: Element_C28
   DisplayName: "\u952E\u76D8\u96F7\u51FB"
   Type: 1
-  Icon: {fileID: 0}
+  Icon: {fileID: -6449255906545870846, guid: d654bd515193e3749bfa8de698940598, type: 3}
   Description: "\u7279\u6B8A\u5143\u7D20\uFF08\u60C5\u7EEA\uFF09C28 \u952E\u76D8\u96F7\u51FB\uFF5C\u96F7\uFF0B\u5DE5\u4F4D\u87D1\u8782\u738B"
   UseEventName: UseC28
   OnCraftedEventName: 

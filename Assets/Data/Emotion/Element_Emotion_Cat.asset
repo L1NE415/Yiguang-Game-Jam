@@ -15,7 +15,7 @@ MonoBehaviour:
   ElementId: Emotion_Cat
   DisplayName: "\u4E91\u76D1\u5DE5\u732B"
   Type: 0
-  Icon: {fileID: -967244358555946368, guid: 1b199a49828960f4d9b41d6a3236fef2, type: 3}
+  Icon: {fileID: -7906136864840648007, guid: aacbf8db24b1195419f860587c5879e7, type: 3}
   Description: "\u4E91\u7AEF\u5728\u5C97\u7684\u732B\u76D1\u5DE5\uFF0C\u6478\u9C7C\u4F1A\u88AB\u8BB0\u8FDB\u5C0F\u672C\u672C\u3002"
   UseEventName: 
   OnCraftedEventName: 

@@ -15,8 +15,7 @@ MonoBehaviour:
   ElementId: Element_P09_FengYu
   DisplayName: "\u98CE\u96E8"
   Type: 1
-  Icon: {fileID: 1337066383209952790, guid: 1b199a49828960f4d9b41d6a3236fef2, type: 3}
+  Icon: {fileID: 8878343641880609924, guid: 599921795feb6434ab639ce0125d14ec, type: 3}
   Description: "\u7279\u6B8A\u5143\u7D20\uFF08\u5929\u6C14\uFF09P09 \u98CE\u96E8\uFF5C\u6C34\uFF0B\u98CE\uFF5C\u6C34\u5206+6\uFF5C\u9633\u51490\uFF5C\u517B\u5206+3\uFF5C\u7A33\u5B9A\u8865\u6C34"
   UseEventName: UseP09
   OnCraftedEventName: CraftedP09
-

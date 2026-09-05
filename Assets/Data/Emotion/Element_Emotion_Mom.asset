@@ -15,7 +15,7 @@ MonoBehaviour:
   ElementId: Emotion_Mom
   DisplayName: "\u5988\u5988\u768460\u79D2"
   Type: 0
-  Icon: {fileID: -967244358555946368, guid: 1b199a49828960f4d9b41d6a3236fef2, type: 3}
+  Icon: {fileID: 4099630316804142028, guid: aacbf8db24b1195419f860587c5879e7, type: 3}
   Description: "\u4E00\u6761 60 \u79D2\u7684\u8BED\u97F3\u65B9\u9635\uFF0C\u53E5\u53E5\u90FD\u662F\u7231\u4E0E\u7275\u6302\u3002"
   UseEventName: 
   OnCraftedEventName: 

@@ -1,22 +1,19 @@
 fileFormatVersion: 2
-guid: 65ce5e33540d1eb4583bae343ec292a9
+guid: 91854267467c51741b436b7ab603b207
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6617184609631842563
-    second: Plant Cycle_0
+      213: 8693431923249437061
+    second: Plant_2_0
   - first:
-      213: -2153631916163848769
-    second: Plant Cycle_1
+      213: -3830455449734456622
+    second: Plant_2_1
   - first:
-      213: -8939493048056182369
-    second: Plant Cycle_2
+      213: -4504312699372548189
+    second: Plant_2_2
   - first:
-      213: -6470974728599834694
-    second: Plant Cycle_3
-  - first:
-      213: -6947158619117642860
-    second: Plant Cycle_4
+      213: 2254500527270889337
+    second: Plant_2_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -60,10 +57,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 140
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,93 +105,119 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Plant Cycle_0
+      name: Plant_2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 512
-        height: 512
+        x: 30
+        y: 44
+        width: 90
+        height: 55
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 301b946d756f4db50800000000000000
-      internalID: 6617184609631842563
+      spriteID: 589d250464645a870800000000000000
+      internalID: 8693431923249437061
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant Cycle_1
+      name: Plant_2_1
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
-        width: 512
-        height: 512
+        x: 236
+        y: 26
+        width: 121
+        height: 112
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fb52c14ce23cc12e0800000000000000
-      internalID: -2153631916163848769
+      spriteID: 2da5e96201d77dac0800000000000000
+      internalID: -3830455449734456622
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant Cycle_2
+      name: Plant_2_2
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 512
-        height: 512
+        x: 467
+        y: 18
+        width: 171
+        height: 212
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f99898eaf6a80f380800000000000000
-      internalID: -8939493048056182369
+      spriteID: 3af4e9cf6777d71c0800000000000000
+      internalID: -4504312699372548189
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant Cycle_3
+      name: Plant_2_3
       rect:
         serializedVersion: 2
-        x: 1536
-        y: 0
-        width: 512
-        height: 512
+        x: 754
+        y: 17
+        width: 189
+        height: 211
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: abfe64fd4ca7236a0800000000000000
-      internalID: -6470974728599834694
+      spriteID: 97789e1e848994f10800000000000000
+      internalID: 2254500527270889337
       vertices: []
       indices: 
       edges: []
@@ -203,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5ffd15d0089a5e84b8d40042f96a8deb
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -211,14 +234,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":2.0},"gridSpriteSize":{"x":512.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Plant Cycle_0: 6617184609631842563
-      Plant Cycle_1: -2153631916163848769
-      Plant Cycle_2: -8939493048056182369
-      Plant Cycle_3: -6470974728599834694
+      Plant_2_0: 8693431923249437061
+      Plant_2_1: -3830455449734456622
+      Plant_2_2: -4504312699372548189
+      Plant_2_3: 2254500527270889337
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

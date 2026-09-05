@@ -15,8 +15,7 @@ MonoBehaviour:
   ElementId: Element_P15_ShaXue
   DisplayName: "\u6C99\u96EA"
   Type: 1
-  Icon: {fileID: 1337066383209952790, guid: 1b199a49828960f4d9b41d6a3236fef2, type: 3}
+  Icon: {fileID: 8878343641880609924, guid: 599921795feb6434ab639ce0125d14ec, type: 3}
   Description: "\u7279\u6B8A\u5143\u7D20\uFF08\u5929\u6C14\uFF09P15 \u6C99\u96EA\uFF5C\u6C99\uFF0B\u96EA\uFF5C\u6C34\u5206+2\uFF5C\u9633\u5149-5\uFF5C\u517B\u5206+6\uFF5C\u517B\u5206\u8F83\u9AD8\uFF0C\u9633\u5149\u53D7\u538B"
   UseEventName: UseP15
   OnCraftedEventName: CraftedP15
-

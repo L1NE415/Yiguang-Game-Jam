@@ -15,8 +15,7 @@ MonoBehaviour:
   ElementId: Element_Light
   DisplayName: "\u5149"
   Type: 0
-  Icon: {fileID: -6742306058058976856, guid: 1b199a49828960f4d9b41d6a3236fef2, type: 3}
+  Icon: {fileID: -1483212210606246775, guid: 5929c59cd2cc7de47bfb92dd6f926b7f, type: 3}
   Description: "\u57FA\u7840\u5143\u7D20----\u5149"
   UseEventName: UseLight
   OnCraftedEventName: 
-

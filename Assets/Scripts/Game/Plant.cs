@@ -102,6 +102,7 @@ public class FinalFormRule
 /// - 离开区间就清零重计，先满足先锁定，锁定后不再判定
 /// - 默认规则：绿萝（全 12~25）/ 仙人掌（水 1~6、阳光 20~40、养分 12~25）
 ///   / 捕蝇草（水 12~25、阳光 12~25、养分 26~45）
+/// - 兜底：第二阶段结束时三个条件都没锁定成功 → 默认长成绿萝
 /// - 第三阶段进入时按锁定形态显示对应外观（PlantVisualChanger 负责换贴图）
 ///
 /// 生长规则：
@@ -371,6 +372,15 @@ public class Plant : MonoBehaviour
         Stage = (GrowthStage)((int)Stage + 1);
         StageProgress = 0f;
         _stageElapsed = 0f;
+
+        // 第二阶段结束时最终形态仍未锁定（三个区间都没保持够时长）：
+        // 默认兜底为绿萝，保证第三阶段一定有确定的最终形态
+        if (Stage == GrowthStage.Mature && FinalForm == PlantFinalForm.None)
+        {
+            FinalForm = PlantFinalForm.Pothos;
+            Debug.Log($"[Plant] {name} 第二阶段未达成任何形态条件，默认最终形态：{FinalForm}");
+            EventCenter.Trigger(EventName.PlantFinalFormDetermined, this, FinalForm);
+        }
 
         Debug.Log($"[Plant] {name} 进入阶段：{Stage}");
         EventCenter.Trigger(EventName.PlantStageChange, this, Stage);

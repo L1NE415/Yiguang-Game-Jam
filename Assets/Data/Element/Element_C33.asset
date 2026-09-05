@@ -15,7 +15,7 @@ MonoBehaviour:
   ElementId: Element_C33
   DisplayName: "\u8F66\u961F\u7FFB\u8F66"
   Type: 1
-  Icon: {fileID: 0}
+  Icon: {fileID: -6449255906545870846, guid: d654bd515193e3749bfa8de698940598, type: 3}
   Description: "\u7279\u6B8A\u5143\u7D20\uFF08\u60C5\u7EEA\uFF09C33 \u8F66\u961F\u7FFB\u8F66\uFF5C\u96EA\uFF0B\u4E94\u6392\u8F66\u94A5\u5319"
   UseEventName: UseC33
   OnCraftedEventName: 

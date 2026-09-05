@@ -15,8 +15,7 @@ MonoBehaviour:
   ElementId: Element_Water
   DisplayName: Water
   Type: 0
-  Icon: {fileID: 1337066383209952790, guid: 1b199a49828960f4d9b41d6a3236fef2, type: 3}
+  Icon: {fileID: 3289410960640070468, guid: 5929c59cd2cc7de47bfb92dd6f926b7f, type: 3}
   Description: "\u57FA\u7840\u5143\u7D20----\u6C34"
   UseEventName: UseWater
   OnCraftedEventName: 
-

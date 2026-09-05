@@ -15,8 +15,7 @@ MonoBehaviour:
   ElementId: Element_P05_YaoBanLeiGuang
   DisplayName: "\u8000\u6591\u96F7\u5149"
   Type: 1
-  Icon: {fileID: 1337066383209952790, guid: 1b199a49828960f4d9b41d6a3236fef2, type: 3}
+  Icon: {fileID: 8878343641880609924, guid: 599921795feb6434ab639ce0125d14ec, type: 3}
   Description: "\u7279\u6B8A\u5143\u7D20\uFF08\u5929\u6C14\uFF09P05 \u8000\u6591\u96F7\u5149\uFF5C\u5149\uFF0B\u96F7\uFF5C\u6C34\u52060\uFF5C\u9633\u5149+4\uFF5C\u517B\u5206+8\uFF5C\u504F\u517B\u5206\u7206\u53D1"
   UseEventName: UseP05
   OnCraftedEventName: CraftedP05
-
