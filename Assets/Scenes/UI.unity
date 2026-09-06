@@ -1278,22 +1278,22 @@ MonoBehaviour:
   MatureRequiresResources: 0
   FinalFormRules:
   - Form: 1
-    MinWater: 12
-    MaxWater: 25
+    MinWater: 30
+    MaxWater: 60
     MinSunlight: 12
     MaxSunlight: 25
     MinNutrient: 12
     MaxNutrient: 25
   - Form: 2
     MinWater: 1
-    MaxWater: 6
+    MaxWater: 30
     MinSunlight: 20
     MaxSunlight: 40
     MinNutrient: 12
     MaxNutrient: 25
   - Form: 3
     MinWater: 60
-    MaxWater: 80
+    MaxWater: 100
     MinSunlight: 20
     MaxSunlight: 40
     MinNutrient: 0
@@ -4786,7 +4786,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 299710982}
   m_HandleRect: {fileID: 299710981}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0.4999998
   m_Size: 0.4622892
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -5809,6 +5809,51 @@ MonoBehaviour:
     Duration: 0
   - Element: {fileID: 11400000, guid: 696ddc8530b547d48b6a1fba0736d998, type: 2}
     Icon: {fileID: -7519981992567501479, guid: 953262a292eabd04a931cf1d7686a5f8, type: 3}
+    Duration: 0
+  - Element: {fileID: 11400000, guid: d9ab85fd6f724e0a81368ad6929fde81, type: 2}
+    Icon: {fileID: -4450694663594271370, guid: 989c3877efbb44247a3775c6b1532e54, type: 3}
+    Duration: 0
+  - Element: {fileID: 11400000, guid: 9d4a9225e1914d12b41f7c8830215d33, type: 2}
+    Icon: {fileID: -9046545487070717671, guid: 01534113b0a24454fae8af33226d9bdb, type: 3}
+    Duration: 0
+  - Element: {fileID: 11400000, guid: 1bfee5f043a84beb8fd852fdfa385801, type: 2}
+    Icon: {fileID: -2976349292179151481, guid: 5eb8c8b3833d04d4494a2a99dedaadc5, type: 3}
+    Duration: 0
+  - Element: {fileID: 11400000, guid: 51ecec89952e4ff39e6352b4fab8c268, type: 2}
+    Icon: {fileID: 135165548698559698, guid: 64dc07a553ec5d946849c2fa4e3e710e, type: 3}
+    Duration: 0
+  - Element: {fileID: 11400000, guid: c0f56a636b3b471db6b3aad420e1bc50, type: 2}
+    Icon: {fileID: -7681743279777792945, guid: 14f9f9f5a944add4ca07a19dc5c0bd5b, type: 3}
+    Duration: 0
+  - Element: {fileID: 11400000, guid: 5055128f6b2749b691c49ba98cb5b3c6, type: 2}
+    Icon: {fileID: 5169712765872502349, guid: ef901d635f0e874408bed253d7481087, type: 3}
+    Duration: 0
+  - Element: {fileID: 11400000, guid: d9e105c2a75a416185e6aadb083d1c64, type: 2}
+    Icon: {fileID: -7246087569894495388, guid: 3214268f05b4be645b4078ba28689141, type: 3}
+    Duration: 0
+  - Element: {fileID: 11400000, guid: 7c15d698c1b54b0d805e3b899447b738, type: 2}
+    Icon: {fileID: 4768250120608138976, guid: 196f2378e2b5a31448518973bae9a2ed, type: 3}
+    Duration: 0
+  - Element: {fileID: 11400000, guid: 47b7df4ba3b5453c8e3f3d37d15738af, type: 2}
+    Icon: {fileID: -2575588873675684593, guid: a0809f7c972e86d44aef1e1f3bccaefb, type: 3}
+    Duration: 0
+  - Element: {fileID: 11400000, guid: 09472198181e44bcbe0d3fb10fd7df8b, type: 2}
+    Icon: {fileID: 5564097734118784821, guid: 56888e3e7cb0c3149b4289d36785f57b, type: 3}
+    Duration: 0
+  - Element: {fileID: 11400000, guid: fe82cd8325c94a168fc42946b0ffb63b, type: 2}
+    Icon: {fileID: 8582910740376572500, guid: 5054ba6e5ecb40d4293aef92fbb0d35e, type: 3}
+    Duration: 0
+  - Element: {fileID: 11400000, guid: d2182a179f464014a80cc4abcbfb95be, type: 2}
+    Icon: {fileID: 96161164168734494, guid: da5c6d31a9c42de4fabff5b6a2ee2982, type: 3}
+    Duration: 0
+  - Element: {fileID: 11400000, guid: ae57daf08c96417ab3248fa15e4fa079, type: 2}
+    Icon: {fileID: 6267179328159287853, guid: 5615ddbe37f01c049b05c6cf0dac8a2d, type: 3}
+    Duration: 0
+  - Element: {fileID: 11400000, guid: 696ddc8530b547d48b6a1fba0736d998, type: 2}
+    Icon: {fileID: -5637198518379565111, guid: f9fbdfe49e474a742a4e0958dd2e8551, type: 3}
+    Duration: 0
+  - Element: {fileID: 11400000, guid: 51cbcb8bb7284260abd335899576ddc7, type: 2}
+    Icon: {fileID: -1364799793194652066, guid: d260731a087156e43abad153e77e1870, type: 3}
     Duration: 0
   displayDuration: 5
   fadeInDuration: 0.2
@@ -7664,7 +7709,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0010070801, y: -181.79997}
+  m_AnchoredPosition: {x: 0.0010070801, y: 0.000045776367}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2022086283
