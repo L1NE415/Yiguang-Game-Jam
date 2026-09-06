@@ -88,7 +88,7 @@ public class FinalFormRule
 ///
 /// 三个资源：
 /// - 水分 Water：随时间消耗，浇水（WaterPlant）补充
-/// - 阳光 Sunlight：由外部环境设置（天气/道具），既是需求门槛也是生长加速项
+/// - 阳光 Sunlight：随时间自然衰减（SunlightConsumePerSec），由外部环境（天气/道具）补光维持，既是需求门槛也是生长加速项
 /// - 养分 Nutrient：随时间消耗，施肥（Fertilize）补充
 ///
 /// 三个阶段的资源需求（在 Inspector 的 StageRequirements 里按顺序配置）：
@@ -171,6 +171,9 @@ public class Plant : MonoBehaviour
 
     [Tooltip("每秒消耗的养分")]
     public float NutrientConsumePerSec = 1f;
+
+    [Tooltip("每秒消耗的阳光（与水分/养分一样随时间自然衰减，需要外部环境补光维持）")]
+    public float SunlightConsumePerSec = 1f;
 
     [Header("状态")]
     [Tooltip("当前生长阶段")]
@@ -290,11 +293,12 @@ public class Plant : MonoBehaviour
         //    避免阶段刚好在某一帧结束时，被这一帧的消耗把压线属性扣到门槛下造成误判死亡
         bool satisfiedThisFrame = RequirementsMet;
 
-        // 3. 资源随时间消耗（消耗速率受 Buff 影响；第三阶段不消耗）
+        // 3. 资源随时间消耗（水/养分消耗速率受 Buff 影响；阳光按固定速率自然衰减；第三阶段不消耗）
         if (!matureNeedsNothing)
         {
             Water = Mathf.Max(0f, Water - WaterConsumePerSec * waterMul * Time.deltaTime);
             Nutrient = Mathf.Max(0f, Nutrient - NutrientConsumePerSec * nutrientMul * Time.deltaTime);
+            Sunlight = Mathf.Max(0f, Sunlight - SunlightConsumePerSec * Time.deltaTime);
         }
 
         // 4. 植物随时间自己长大：阶段进度 = 已过时间 / 阶段限时，与属性达标与否无关。

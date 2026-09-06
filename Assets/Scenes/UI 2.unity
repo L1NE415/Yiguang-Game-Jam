@@ -1299,9 +1299,8 @@ MonoBehaviour:
     MinNutrient: 0
     MaxNutrient: 100
   FinalFormHoldSeconds: 3
-  WaterConsumePerSec: 0.5
+  WaterConsumePerSec: 0.92
   NutrientConsumePerSec: 0.5
-  SunlightConsumePerSec: 0.5
   Stage: 0
   useDetectRadius: 2.5
 --- !u!114 &192787851
@@ -1322,7 +1321,7 @@ MonoBehaviour:
   sproutSprite: {fileID: -2153631916163848769, guid: 65ce5e33540d1eb4583bae343ec292a9, type: 3}
   matureSprite: {fileID: -8939493048056182369, guid: 65ce5e33540d1eb4583bae343ec292a9, type: 3}
   pothosSprite: {fileID: -8939493048056182369, guid: 65ce5e33540d1eb4583bae343ec292a9, type: 3}
-  cactusSprite: {fileID: -4504312699372548189, guid: 91854267467c51741b436b7ab603b207, type: 3}
+  cactusSprite: {fileID: 2254500527270889337, guid: 91854267467c51741b436b7ab603b207, type: 3}
   flytrapSprite: {fileID: -9204078146142111011, guid: 14fbaebb46ba2b9488019958b7378dac, type: 3}
   deadSprite: {fileID: -6470974728599834694, guid: 65ce5e33540d1eb4583bae343ec292a9, type: 3}
   popOnStageChange: 1
@@ -5078,7 +5077,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 299710982}
   m_HandleRect: {fileID: 299710981}
   m_Direction: 2
-  m_Value: 0.4999998
+  m_Value: 1
   m_Size: 0.4622892
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -8356,7 +8355,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0010070801, y: 0.000045776367}
+  m_AnchoredPosition: {x: 0.0010070801, y: -181.79997}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2022086283
