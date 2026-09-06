@@ -44,6 +44,23 @@ public class RandomEventSystem : Singleton<RandomEventSystem>
     /// <summary>已创建的情绪元素实例缓存（同一情绪元素共用一个实例，背包才能正确堆叠计数）</summary>
     private readonly Dictionary<string, Element> _elementCache = new Dictionary<string, Element>();
 
+    /// <summary>本实例是否为自举自动创建的空白实例（未配置情绪元素资产）</summary>
+    private bool isAutoCreated;
+
+    protected override void Awake()
+    {
+        // 场景中配置好的实例（带情绪元素资产）优先级更高：
+        // 如果当前单例是自举创建的空白实例（例如游戏从 StartScene 启动时自举抢先生成），
+        // 就销毁空白实例、由本实例接管单例——保证事件奖励用得上配置的图标与文案
+        if (!isAutoCreated && instance is RandomEventSystem existing && existing != this && existing.isAutoCreated)
+        {
+            Destroy(existing.gameObject);
+            instance = null;
+        }
+
+        base.Awake();
+    }
+
     private void Start()
     {
         StartCoroutine(EventLoop());
@@ -170,7 +187,8 @@ public class RandomEventSystem : Singleton<RandomEventSystem>
             FindObjectsByType<RandomEventSystem>(FindObjectsInactive.Exclude, FindObjectsSortMode.None).Length == 0)
         {
             var go = new GameObject("RandomEventSystem");
-            go.AddComponent<RandomEventSystem>();
+            var comp = go.AddComponent<RandomEventSystem>();
+            comp.isAutoCreated = true;   // 标记为空白实例：之后场景里配置好的实例加载时可将其接管替换
             Debug.Log("[RandomEventSystem] 场景未配置，已自动创建（默认间隔 30~60 秒）");
         }
 

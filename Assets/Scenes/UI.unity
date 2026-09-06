@@ -1263,11 +1263,11 @@ MonoBehaviour:
   Sunlight: 50
   Nutrient: 50
   StageRequirements:
-  - TimeLimit: 30
+  - TimeLimit: 60
     MinWater: 15
     MinSunlight: 10
     MinNutrient: 0
-  - TimeLimit: 35
+  - TimeLimit: 60
     MinWater: 30
     MinSunlight: 30
     MinNutrient: 15
@@ -2574,22 +2574,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &434114020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 434114012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be0b5b117ff547fdbff53e23f1815639, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  pausePanel: {fileID: 653513760}
-  continueButton: {fileID: 421911350}
-  endButton: {fileID: 1204723529}
-  pauseOnOpen: 1
 --- !u!114 &434114013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2735,6 +2719,22 @@ MonoBehaviour:
   plantImage: {fileID: 725800539}
   titleTextTMP: {fileID: 0}
   titleText: {fileID: 2091269441}
+--- !u!114 &434114020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434114012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be0b5b117ff547fdbff53e23f1815639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pausePanel: {fileID: 653513760}
+  continueButton: {fileID: 421911350}
+  endButton: {fileID: 1204723529}
+  pauseOnOpen: 1
 --- !u!1 &460848829
 GameObject:
   m_ObjectHideFlags: 0
@@ -2779,8 +2779,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de75f87627b666b47aa0112a014003ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RandomEventSystem
-  minInterval: 25
-  maxInterval: 35
+  minInterval: 15
+  maxInterval: 25
   specialEventChance: 1
   emotionElements:
   - {fileID: 11400000, guid: 7dd5ce1f671c4bab9448ed6b46337ba4, type: 2}

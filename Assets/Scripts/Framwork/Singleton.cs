@@ -7,7 +7,8 @@ namespace Framwork
     /// 业务类继承 Singleton&lt;自身&gt; 即可获得 Instance，不用再手写 Awake 判重逻辑：
     public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
-        private static T instance;
+        // protected：子类（如 RandomEventSystem）需要在 Awake 里做"配置实例接管空白实例"的判断
+        protected static T instance;
 
         /// <summary>全局唯一实例（未创建时为 null）</summary>
         public static T Instance => instance;
