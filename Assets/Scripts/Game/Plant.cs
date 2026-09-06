@@ -36,21 +36,27 @@ public class StageRequirement
 /// <summary>植物最终形态（第三阶段长成什么样子，由第二阶段的属性区间决定）</summary>
 public enum PlantFinalForm
 {
-    /// <summary>未确定：第二阶段没有任何条件保持超过判定时长，第三阶段用默认成熟贴图</summary>
+    /// <summary>未确定：第二阶段水分没落进过任何区间，第三阶段用默认成熟贴图</summary>
     None = 0,
-    /// <summary>绿萝：水 12~25、阳光 12~25、养分 12~25</summary>
+    /// <summary>绿萝：水分区间 50~66.67（P04）</summary>
     Pothos = 1,
-    /// <summary>仙人掌：水 1~6、阳光 20~40、养分 12~25</summary>
+    /// <summary>仙人掌：水分区间 0~16.67（P01）</summary>
     Cactus = 2,
-    /// <summary>捕蝇草：水 12~25、阳光 12~25、养分 26~45</summary>
+    /// <summary>捕蝇草：水分区间 83.33~100（P06）</summary>
     Flytrap = 3,
+    /// <summary>多肉植物：水分区间 16.67~33.33（P02）</summary>
+    Succulent = 4,
+    /// <summary>薰衣草：水分区间 33.33~50（P03）</summary>
+    Lavender = 5,
+    /// <summary>龟背竹：水分区间 66.67~83.33（P05）</summary>
+    Monstera = 6,
 }
 
 /// <summary>
 /// 最终形态判定条件（简化版）：
-/// 前两个阶段（种子 / 发芽）期间，水分【达到过】 [MinWater, MaxWater] 区间，就算达成这条条件。
-/// 不需要保持时长，阳光 / 养分暂时不参与判定（字段保留，方便以后恢复）。
-/// 达成多条时按 Plant 里的优先级裁决（仙人掌 &gt; 绿萝 &gt; 捕蝇草），见 Plant.LockFinalForm。
+/// 前两个阶段（种子 / 发芽）期间，水分落在 [MinWater, MaxWater] 区间的每一帧都累计时长；
+/// 进入第三阶段时，累计时长最长的一条对应的形态胜出（即把水分大部分时间压在哪个区间，就长成哪种）。
+/// 阳光 / 养分暂时不参与判定（字段保留，方便以后恢复）。见 Plant.LockFinalForm。
 /// </summary>
 [Serializable]
 public class FinalFormRule
@@ -79,8 +85,8 @@ public class FinalFormRule
     [Tooltip("养分区间上限（当前版本不参与判定，保留备用）")]
     public float MaxNutrient = 100f;
 
-    /// <summary>本条条件在前面阶段是否已经达成过（运行时数据，不序列化）</summary>
-    [NonSerialized] public bool Achieved;
+    /// <summary>本条条件在前面阶段累计停留的时长（秒）；进第三阶段时取累计最长者。运行时数据，不序列化</summary>
+    [NonSerialized] public float Accumulated;
 }
 
 /// <summary>
@@ -97,11 +103,12 @@ public class FinalFormRule
 /// - 成熟 Mature：默认不需要任何资源（不消耗、不看门槛、不会超时死亡）
 ///
 /// 最终形态判定（简化版）：
-/// - 前两个阶段（种子 / 发芽）期间，水分【达到过】某条规则的 [MinWater, MaxWater] 区间，
-///   就记下"达成了这条条件"（不需要保持时长，阳光 / 养分暂不参与判定）
-/// - 进入第三阶段时统一裁决：在达成过的条件里按优先级 仙人掌 &gt; 绿萝 &gt; 捕蝇草 取第一个
-///   （满足过仙人掌就是仙人掌；只满足过绿萝和捕蝇草则是绿萝；都没满足过兜底绿萝）
-/// - 默认规则：绿萝（水 12~25）/ 仙人掌（水 1~6）/ 捕蝇草（水 26~45）
+/// - 前两个阶段（种子 / 发芽）期间，水分落在某条规则的 [MinWater, MaxWater] 区间的每一帧都累计时长
+///   （阳光 / 养分暂不参与判定）
+/// - 进入第三阶段时统一裁决：取累计停留时长最长的一条对应的形态胜出
+///   （你大部分时间把水分压在哪个区间，就长成哪种）；一条都没累计到则兜底绿萝
+/// - 默认规则（水分 0~100 均分 6 段，每段约 16.67；阳光/养分暂不参与）：
+///   仙人掌 0~16.67 / 多肉植物 16.67~33.33 / 薰衣草 33.33~50 / 绿萝 50~66.67 / 龟背竹 66.67~83.33 / 捕蝇草 83.33~100
 /// - 第三阶段进入时按锁定形态显示对应外观（PlantVisualChanger 负责换贴图）
 ///
 /// 生长规则（简化版）：
@@ -317,18 +324,10 @@ public class Plant : MonoBehaviour
         }
     }
 
-    /// <summary>最终形态优先级：同时达成多条条件时取靠前的（仙人掌 &gt; 绿萝 &gt; 捕蝇草）</summary>
-    private static readonly PlantFinalForm[] FinalFormPriority =
-    {
-        PlantFinalForm.Cactus,
-        PlantFinalForm.Pothos,
-        PlantFinalForm.Flytrap,
-    };
-
     /// <summary>
-    /// 最终形态条件达成记录（前两个阶段每帧调用）：
-    /// 只看水分——水分落进某条规则的 [MinWater, MaxWater] 区间，就把该条标记为"达成过"。
-    /// 这里只记录不锁定，最终形态在【进入第三阶段时】按优先级裁决（见 LockFinalForm）。
+    /// 最终形态条件累计（前两个阶段每帧调用）：
+    /// 只看水分——水分落在某条规则的 [MinWater, MaxWater] 区间，就给该条累加本帧时长。
+    /// 这里只累计不锁定，最终形态在【进入第三阶段时】取累计时长最长的一条（见 LockFinalForm）。
     /// 阳光 / 养分暂不参与判定（字段保留，方便以后恢复）。
     /// </summary>
     private void TrackFinalForm()
@@ -337,56 +336,43 @@ public class Plant : MonoBehaviour
 
         foreach (var rule in FinalFormRules)
         {
-            if (rule == null || rule.Form == PlantFinalForm.None || rule.Achieved) continue;
+            if (rule == null || rule.Form == PlantFinalForm.None) continue;
 
             if (Water >= rule.MinWater && Water <= rule.MaxWater)
-            {
-                rule.Achieved = true;
-                Debug.Log($"[Plant] {name} 水分达到 {Water:F1}（{rule.Form} 区间 {rule.MinWater}~{rule.MaxWater}），达成条件：{rule.Form}");
-            }
+                rule.Accumulated += Time.deltaTime;
         }
     }
 
     /// <summary>
-    /// 进入第三阶段时按优先级锁定最终形态：
-    /// 在前面阶段【达成过】的条件里按 仙人掌 &gt; 绿萝 &gt; 捕蝇草 取第一个；
-    /// 一条都没达成则兜底绿萝。锁定后广播 PlantFinalFormDetermined，保证第三阶段一定有确定形态。
+    /// 进入第三阶段时按累计停留时长锁定最终形态：
+    /// 在前面阶段累计时长最长的一条规则对应的形态胜出（即你把水分大部分时间压在哪个区间，就长成哪种）；
+    /// 一条都没累计到（水分从没落进过任何区间）则兜底绿萝。
+    /// 锁定后广播 PlantFinalFormDetermined，保证第三阶段一定有确定形态。
     /// </summary>
     private void LockFinalForm()
     {
         if (FinalForm != PlantFinalForm.None) return;
 
         PlantFinalForm result = PlantFinalForm.Pothos;
-        bool anyAchieved = false;
+        float best = 0f;
+        bool anyAccumulated = false;
 
-        foreach (var form in FinalFormPriority)
+        if (FinalFormRules != null)
         {
-            if (HasAchievedRule(form))
+            foreach (var rule in FinalFormRules)
             {
-                result = form;
-                anyAchieved = true;
-                break;
+                if (rule == null || rule.Accumulated <= best) continue;
+                best = rule.Accumulated;
+                result = rule.Form;
+                anyAccumulated = true;
             }
         }
 
         FinalForm = result;
-        Debug.Log(anyAchieved
-            ? $"[Plant] {name} 按优先级（仙人掌 > 绿萝 > 捕蝇草）锁定最终形态：{FinalForm}"
-            : $"[Plant] {name} 前面阶段未达成任何形态条件，默认最终形态：{FinalForm}");
+        Debug.Log(anyAccumulated
+            ? $"[Plant] {name} 按水分累计停留时长最长锁定最终形态：{FinalForm}（{best:F1}s）"
+            : $"[Plant] {name} 前面阶段水分从未落进任何形态区间，默认最终形态：{FinalForm}");
         EventCenter.Trigger(EventName.PlantFinalFormDetermined, this, FinalForm);
-    }
-
-    /// <summary>指定形态的条件是否在前面阶段达成过（水分落进过该区间）</summary>
-    private bool HasAchievedRule(PlantFinalForm form)
-    {
-        if (FinalFormRules == null) return false;
-
-        foreach (var rule in FinalFormRules)
-        {
-            if (rule != null && rule.Form == form && rule.Achieved)
-                return true;
-        }
-        return false;
     }
 
     /// <summary>本阶段进度长满：进入下一阶段，或在成熟阶段完成生长</summary>
@@ -404,8 +390,8 @@ public class Plant : MonoBehaviour
         StageProgress = 0f;
         _stageElapsed = 0f;
 
-        // 进入第三阶段：按优先级（仙人掌 > 绿萝 > 捕蝇草）裁决最终形态，
-        // 一条条件都没达成过则兜底绿萝，保证第三阶段一定有确定形态
+        // 进入第三阶段：按水分累计停留时长最长裁决最终形态（兜底绿萝），
+        // 保证第三阶段一定有确定形态
         if (Stage == GrowthStage.Mature)
             LockFinalForm();
 
@@ -453,10 +439,8 @@ public class Plant : MonoBehaviour
 
     /// <summary>
     /// 补齐最终形态判定默认规则（场景旧组件数组为空时填充）。
-    /// 判定只看水分，三条规则的水分区间刻意错开，保证三种形态都能养出来：
-    /// - 绿萝：水 12~25（阳光 12~25、养分 12~25，暂不参与判定）
-    /// - 仙人掌：水 1~6（阳光 20~40、养分 12~25，暂不参与判定）
-    /// - 捕蝇草：水 26~45（阳光 12~25、养分 26~45，暂不参与判定）
+    /// 判定只看水分，6 条规则的水分区间无缝覆盖 0~100（每段约 16.67），
+    /// 谁累计停留最久谁胜出：仙人掌 / 多肉植物 / 薰衣草 / 绿萝 / 龟背竹 / 捕蝇草。
     /// </summary>
     private void EnsureFinalFormRules()
     {
@@ -465,9 +449,13 @@ public class Plant : MonoBehaviour
 
         FinalFormRules = new[]
         {
-            new FinalFormRule { Form = PlantFinalForm.Pothos,  MinWater = 12f, MaxWater = 25f, MinSunlight = 12f, MaxSunlight = 25f, MinNutrient = 12f, MaxNutrient = 25f },
-            new FinalFormRule { Form = PlantFinalForm.Cactus,  MinWater = 1f,  MaxWater = 6f,  MinSunlight = 20f, MaxSunlight = 40f, MinNutrient = 12f, MaxNutrient = 25f },
-            new FinalFormRule { Form = PlantFinalForm.Flytrap, MinWater = 26f, MaxWater = 45f, MinSunlight = 12f, MaxSunlight = 25f, MinNutrient = 26f, MaxNutrient = 45f },
+            // 水分区间按用户表 6 等分（每段约 16.67），阳光/养分不参与判定
+            new FinalFormRule { Form = PlantFinalForm.Cactus,    MinWater = 0f,    MaxWater = 16.67f, MinSunlight = 0f, MaxSunlight = 100f, MinNutrient = 0f, MaxNutrient = 100f },
+            new FinalFormRule { Form = PlantFinalForm.Succulent, MinWater = 16.67f, MaxWater = 33.33f, MinSunlight = 0f, MaxSunlight = 100f, MinNutrient = 0f, MaxNutrient = 100f },
+            new FinalFormRule { Form = PlantFinalForm.Lavender,  MinWater = 33.33f, MaxWater = 50f,    MinSunlight = 0f, MaxSunlight = 100f, MinNutrient = 0f, MaxNutrient = 100f },
+            new FinalFormRule { Form = PlantFinalForm.Pothos,    MinWater = 50f,    MaxWater = 66.67f, MinSunlight = 0f, MaxSunlight = 100f, MinNutrient = 0f, MaxNutrient = 100f },
+            new FinalFormRule { Form = PlantFinalForm.Monstera,  MinWater = 66.67f, MaxWater = 83.33f, MinSunlight = 0f, MaxSunlight = 100f, MinNutrient = 0f, MaxNutrient = 100f },
+            new FinalFormRule { Form = PlantFinalForm.Flytrap,   MinWater = 83.33f, MaxWater = 100f,   MinSunlight = 0f, MaxSunlight = 100f, MinNutrient = 0f, MaxNutrient = 100f },
         };
     }
 
@@ -567,13 +555,13 @@ public class Plant : MonoBehaviour
         Water = 50f;
         Nutrient = 50f;
 
-        // 最终形态判定一并重置（下一轮重新记录、重新裁决）
+        // 最终形态判定一并重置（下一轮重新累计、重新裁决）
         FinalForm = PlantFinalForm.None;
         if (FinalFormRules != null)
         {
             foreach (var rule in FinalFormRules)
             {
-                if (rule != null) rule.Achieved = false;
+                if (rule != null) rule.Accumulated = 0f;
             }
         }
 
