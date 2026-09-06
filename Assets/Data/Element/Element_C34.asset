@@ -15,7 +15,7 @@ MonoBehaviour:
   ElementId: Element_C34
   DisplayName: "\u87D1\u8782\u68D2\u68D2\u51B0"
   Type: 1
-  Icon: {fileID: -6449255906545870846, guid: d654bd515193e3749bfa8de698940598, type: 3}
+  Icon: {fileID: 4338239925855384225, guid: 0e03b722fb3c2784daadc23da7ff6e06, type: 3}
   Description: "\u7279\u6B8A\u5143\u7D20\uFF08\u60C5\u7EEA\uFF09C34 \u87D1\u8782\u68D2\u68D2\u51B0\uFF5C\u96EA\uFF0B\u5DE5\u4F4D\u87D1\u8782\u738B"
   UseEventName: UseC34
   OnCraftedEventName: 

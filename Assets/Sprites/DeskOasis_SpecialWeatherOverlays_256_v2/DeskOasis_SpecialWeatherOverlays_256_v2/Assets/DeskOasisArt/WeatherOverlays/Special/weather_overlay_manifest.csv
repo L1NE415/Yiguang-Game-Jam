@@ -1,0 +1,16 @@
+id,weather_cn,file,formula,water,sunlight,nutrients
+P02,太阳雨,P02_weather_sunshower_256.png,光+水,+3,+4,+4
+P03,烈日扬沙,P03_weather_sun_sand_256.png,光+沙,-4,+6,+5
+P04,干热风,P04_weather_hot_wind_256.png,光+风,-4,+8,+3
+P05,耀斑雷光,P05_weather_solar_thunder_256.png,光+雷,0,+4,+8
+P06,冬日晴,P06_weather_winter_sun_256.png,光+雪,+1,+3,+3
+P08,泥雨,P08_weather_mud_rain_256.png,水+沙,+5,-3,+6
+P09,风雨,P09_weather_wind_rain_256.png,水+风,+6,0,+3
+P10,雷暴雨,P10_weather_thunderstorm_256.png,水+雷,+8,-4,+8
+P11,冻雨,P11_weather_freezing_rain_256.png,水+雪,+7,-5,+3
+P13,沙暴,P13_weather_sandstorm_256.png,沙+风,-4,-1,+8
+P14,雷沙暴,P14_weather_thunder_sandstorm_256.png,沙+雷,-2,-5,+10
+P15,沙雪,P15_weather_sand_snow_256.png,沙+雪,+2,-5,+6
+P17,雷暴大风,P17_weather_thunder_gale_256.png,风+雷,+2,-3,+9
+P18,风雪,P18_weather_wind_snow_256.png,风+雪,+3,-4,+4
+P20,雷雪,P20_weather_thundersnow_256.png,雷+雪,+5,-5,+8
