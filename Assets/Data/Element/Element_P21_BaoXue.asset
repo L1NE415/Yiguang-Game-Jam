@@ -15,7 +15,7 @@ MonoBehaviour:
   ElementId: Element_P21_BaoXue
   DisplayName: "\u66B4\u96EA"
   Type: 1
-  Icon: {fileID: 8878343641880609924, guid: 599921795feb6434ab639ce0125d14ec, type: 3}
+  Icon: {fileID: -7043500413734358157, guid: 612fab90f9ded81458eb915f330ff283, type: 3}
   Description: "\u7279\u6B8A\u5143\u7D20\uFF08\u5929\u6C14\uFF09P21 \u66B4\u96EA\uFF5C\u96EA\uFF0B\u96EA\uFF5C\u6C34\u5206+7\uFF5C\u9633\u5149-5\uFF5C\u517B\u5206+2\uFF5C\u5F3A\u8865\u6C34\uFF0C\u660E\u663E\u538B\u5149"
   UseEventName: UseP21
   OnCraftedEventName: CraftedP21

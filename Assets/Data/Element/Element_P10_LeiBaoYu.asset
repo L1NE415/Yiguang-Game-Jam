@@ -15,7 +15,7 @@ MonoBehaviour:
   ElementId: Element_P10_LeiBaoYu
   DisplayName: "\u96F7\u66B4\u96E8"
   Type: 1
-  Icon: {fileID: 8878343641880609924, guid: 599921795feb6434ab639ce0125d14ec, type: 3}
+  Icon: {fileID: -3685750429032992231, guid: f5b59d978d642ff4a90fa22f081be234, type: 3}
   Description: "\u7279\u6B8A\u5143\u7D20\uFF08\u5929\u6C14\uFF09P10 \u96F7\u66B4\u96E8\uFF5C\u6C34\uFF0B\u96F7\uFF5C\u6C34\u5206+8\uFF5C\u9633\u5149-4\uFF5C\u517B\u5206+8\uFF5C\u5F3A\u6C34\u5206\uFF0B\u5F3A\u517B\u5206"
   UseEventName: UseP10
   OnCraftedEventName: CraftedP10

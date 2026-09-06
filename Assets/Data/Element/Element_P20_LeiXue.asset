@@ -15,7 +15,7 @@ MonoBehaviour:
   ElementId: Element_P20_LeiXue
   DisplayName: "\u96F7\u96EA"
   Type: 1
-  Icon: {fileID: 8878343641880609924, guid: 599921795feb6434ab639ce0125d14ec, type: 3}
+  Icon: {fileID: 579711821508145791, guid: f5b59d978d642ff4a90fa22f081be234, type: 3}
   Description: "\u7279\u6B8A\u5143\u7D20\uFF08\u5929\u6C14\uFF09P20 \u96F7\u96EA\uFF5C\u96F7\uFF0B\u96EA\uFF5C\u6C34\u5206+5\uFF5C\u9633\u5149-5\uFF5C\u517B\u5206+8\uFF5C\u6C34\u5206\uFF0B\u517B\u5206\u53CC\u9AD8"
   UseEventName: UseP20
   OnCraftedEventName: CraftedP20

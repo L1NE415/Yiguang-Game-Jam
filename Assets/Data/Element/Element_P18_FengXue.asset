@@ -15,7 +15,7 @@ MonoBehaviour:
   ElementId: Element_P18_FengXue
   DisplayName: "\u98CE\u96EA"
   Type: 1
-  Icon: {fileID: 8878343641880609924, guid: 599921795feb6434ab639ce0125d14ec, type: 3}
+  Icon: {fileID: 4432820681474074656, guid: f5b59d978d642ff4a90fa22f081be234, type: 3}
   Description: "\u7279\u6B8A\u5143\u7D20\uFF08\u5929\u6C14\uFF09P18 \u98CE\u96EA\uFF5C\u98CE\uFF0B\u96EA\uFF5C\u6C34\u5206+3\uFF5C\u9633\u5149-4\uFF5C\u517B\u5206+4\uFF5C\u4E2D\u7B49\u6C34\u5206\uFF0B\u517B\u5206"
   UseEventName: UseP18
   OnCraftedEventName: CraftedP18

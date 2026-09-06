@@ -15,7 +15,7 @@ MonoBehaviour:
   ElementId: Element_P04_GanReFeng
   DisplayName: "\u5E72\u70ED\u98CE"
   Type: 1
-  Icon: {fileID: 8878343641880609924, guid: 599921795feb6434ab639ce0125d14ec, type: 3}
+  Icon: {fileID: -7899328019582386884, guid: f5b59d978d642ff4a90fa22f081be234, type: 3}
   Description: "\u7279\u6B8A\u5143\u7D20\uFF08\u5929\u6C14\uFF09P04 \u5E72\u70ED\u98CE\uFF5C\u5149\uFF0B\u98CE\uFF5C\u6C34\u5206-4\uFF5C\u9633\u5149+8\uFF5C\u517B\u5206+3\uFF5C\u9AD8\u9633\u5149\uFF0C\u9AD8\u5931\u6C34"
   UseEventName: UseP04
   OnCraftedEventName: CraftedP04
