@@ -1553,6 +1553,7 @@ GameObject:
   - component: {fileID: 328859462}
   - component: {fileID: 328859461}
   - component: {fileID: 328859460}
+  - component: {fileID: 328859463}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1560,6 +1561,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &328859463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328859458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f3c9d2e4b8a4c1f9e6d5a3b2c1d0e9f, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  clickClip: {fileID: 8300000, guid: 399ad18f83904f042b68902dc2fcc78f, type: 3}
+  volume: 1
 --- !u!224 &328859459
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2026,7 +2041,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: EmotionElement
+  m_text: "\u4E8B\u4EF6\u5143\u7D20"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2059,7 +2074,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -3036,7 +3051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c55e7ea1e87ace4f9419cc944bd3100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Framwork.AudioManager
-  autoBgmClip: {fileID: 8300000, guid: 0a4f3f472e5adbe4aaab95593a4e6465, type: 3}
+  autoBgmClip: {fileID: 0}
   bgmVolume: 0.5
   sfxVolume: 1
   sfxSourceCount: 8
@@ -3363,7 +3378,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 259, y: -60}
+  m_AnchoredPosition: {x: 259, y: -66.03}
   m_SizeDelta: {x: 282.489, y: 37.187378}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &610068709
@@ -3386,9 +3401,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'WeatherElement
-
-'
+  m_text: "\u5929\u6C14\u5143\u7D20\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3421,7 +3434,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -4460,7 +4473,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Synthesis
+  m_text: "\u5408\u6210"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4487,13 +4500,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -5079,7 +5092,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 299710981}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.4622892
+  m_Size: 0.4622893
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
