@@ -169,7 +169,7 @@ public class SettlementUI : MonoBehaviour
     /// <summary>
     /// 填充面板内容：
     /// - 图片：取植物 SpriteRenderer 当前贴图（进入第三阶段时 PlantVisualChanger 已换成最终形态贴图）
-    /// - 名称：按最终形态显示中文名（绿萝 / 仙人掌 / 捕蝇草）
+    /// - 名称：按最终形态显示中文名（仙人掌 / 多肉植物 / 薰衣草 / 绿萝 / 龟背竹 / 捕蝇草）
     /// </summary>
     private void FillPanelContent()
     {
@@ -178,9 +178,12 @@ public class SettlementUI : MonoBehaviour
         // 名称标题：最终形态 → 中文名（进入第三阶段时形态一定已锁定，None 仅作兜底）
         string plantName = _plant.FinalForm switch
         {
-            PlantFinalForm.Pothos  => "绿萝",
-            PlantFinalForm.Cactus  => "仙人掌",
-            PlantFinalForm.Flytrap => "捕蝇草",
+            PlantFinalForm.Cactus    => "仙人掌",
+            PlantFinalForm.Succulent => "多肉植物",
+            PlantFinalForm.Lavender  => "薰衣草",
+            PlantFinalForm.Pothos    => "绿萝",
+            PlantFinalForm.Monstera  => "龟背竹",
+            PlantFinalForm.Flytrap   => "捕蝇草",
             _ => _plant.gameObject.name,
         };
 

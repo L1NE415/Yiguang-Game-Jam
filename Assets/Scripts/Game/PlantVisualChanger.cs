@@ -21,7 +21,7 @@ using UnityEngine;
 ///
 /// 最终形态（第三阶段外观，贴图同样手动拖入）：
 ///   第二阶段属性区间判定锁定形态后（Plant.FinalForm / PlantFinalFormDetermined 事件），
-///   进入第三阶段时自动换成 pothosSprite（绿萝）/ cactusSprite（仙人掌）/ flytrapSprite（捕蝇草），
+///   进入第三阶段时自动换成对应形态的贴图（仙人掌 / 多肉植物 / 薰衣草 / 绿萝 / 龟背竹 / 捕蝇草），
 ///   形态未锁定或对应贴图留空时使用 matureSprite。
 ///
 /// 完全依赖 Plant 触发的事件，无需手动调用任何方法；
@@ -47,14 +47,23 @@ public class PlantVisualChanger : MonoBehaviour
     [Tooltip("成熟阶段默认贴图（手动拖入；最终形态未锁定 / 形态贴图留空时使用）")]
     [SerializeField] private Sprite matureSprite;
 
-    [Header("最终形态贴图（第二阶段属性区间判定，见 Plant.FinalFormRules）")]
-    [Tooltip("绿萝贴图：第二阶段水/阳光/养分都维持在 12~25 连续超 10 秒时第三阶段显示；留空则用 matureSprite")]
-    [SerializeField] private Sprite pothosSprite;
-
-    [Tooltip("仙人掌贴图：第二阶段水 1~6、阳光 20~40、养分 12~25 连续超 10 秒时第三阶段显示；留空则用 matureSprite")]
+    [Header("最终形态贴图（第二阶段水分区间判定，见 Plant.FinalFormRules）")]
+    [Tooltip("仙人掌贴图：第二阶段水分主要在 0~16.67 时第三阶段显示；留空则用 matureSprite")]
     [SerializeField] private Sprite cactusSprite;
 
-    [Tooltip("捕蝇草贴图：第二阶段水 12~25、阳光 12~25、养分 26~45 连续超 10 秒时第三阶段显示；留空则用 matureSprite")]
+    [Tooltip("多肉植物贴图：第二阶段水分主要在 16.67~33.33 时第三阶段显示；留空则用 matureSprite")]
+    [SerializeField] private Sprite succulentSprite;
+
+    [Tooltip("薰衣草贴图：第二阶段水分主要在 33.33~50 时第三阶段显示；留空则用 matureSprite")]
+    [SerializeField] private Sprite lavenderSprite;
+
+    [Tooltip("绿萝贴图：第二阶段水分主要在 50~66.67 时第三阶段显示；留空则用 matureSprite")]
+    [SerializeField] private Sprite pothosSprite;
+
+    [Tooltip("龟背竹贴图：第二阶段水分主要在 66.67~83.33 时第三阶段显示；留空则用 matureSprite")]
+    [SerializeField] private Sprite monsteraSprite;
+
+    [Tooltip("捕蝇草贴图：第二阶段水分主要在 83.33~100 时第三阶段显示；留空则用 matureSprite")]
     [SerializeField] private Sprite flytrapSprite;
 
     [Header("死亡 / 重置")]
@@ -207,11 +216,20 @@ public class PlantVisualChanger : MonoBehaviour
         {
             switch (plant.FinalForm)
             {
+                case PlantFinalForm.Cactus:
+                    if (cactusSprite != null) return cactusSprite;
+                    break;
+                case PlantFinalForm.Succulent:
+                    if (succulentSprite != null) return succulentSprite;
+                    break;
+                case PlantFinalForm.Lavender:
+                    if (lavenderSprite != null) return lavenderSprite;
+                    break;
                 case PlantFinalForm.Pothos:
                     if (pothosSprite != null) return pothosSprite;
                     break;
-                case PlantFinalForm.Cactus:
-                    if (cactusSprite != null) return cactusSprite;
+                case PlantFinalForm.Monstera:
+                    if (monsteraSprite != null) return monsteraSprite;
                     break;
                 case PlantFinalForm.Flytrap:
                     if (flytrapSprite != null) return flytrapSprite;

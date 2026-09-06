@@ -1277,25 +1277,46 @@ MonoBehaviour:
     MinNutrient: 0
   MatureRequiresResources: 0
   FinalFormRules:
-  - Form: 1
-    MinWater: 30
-    MaxWater: 60
-    MinSunlight: 12
-    MaxSunlight: 25
-    MinNutrient: 12
-    MaxNutrient: 25
   - Form: 2
-    MinWater: 1
-    MaxWater: 30
-    MinSunlight: 20
-    MaxSunlight: 40
-    MinNutrient: 12
-    MaxNutrient: 25
+    MinWater: 0
+    MaxWater: 16.67
+    MinSunlight: 0
+    MaxSunlight: 100
+    MinNutrient: 0
+    MaxNutrient: 100
+  - Form: 4
+    MinWater: 16.67
+    MaxWater: 33.33
+    MinSunlight: 0
+    MaxSunlight: 100
+    MinNutrient: 0
+    MaxNutrient: 100
+  - Form: 5
+    MinWater: 33.33
+    MaxWater: 50
+    MinSunlight: 0
+    MaxSunlight: 100
+    MinNutrient: 0
+    MaxNutrient: 100
+  - Form: 1
+    MinWater: 50
+    MaxWater: 66.67
+    MinSunlight: 0
+    MaxSunlight: 100
+    MinNutrient: 0
+    MaxNutrient: 100
+  - Form: 6
+    MinWater: 66.67
+    MaxWater: 83.33
+    MinSunlight: 0
+    MaxSunlight: 100
+    MinNutrient: 0
+    MaxNutrient: 100
   - Form: 3
-    MinWater: 60
+    MinWater: 83.33
     MaxWater: 100
-    MinSunlight: 20
-    MaxSunlight: 40
+    MinSunlight: 0
+    MaxSunlight: 100
     MinNutrient: 0
     MaxNutrient: 100
   FinalFormHoldSeconds: 3
@@ -1321,9 +1342,12 @@ MonoBehaviour:
   seedSprite: {fileID: 6617184609631842563, guid: 65ce5e33540d1eb4583bae343ec292a9, type: 3}
   sproutSprite: {fileID: -2153631916163848769, guid: 65ce5e33540d1eb4583bae343ec292a9, type: 3}
   matureSprite: {fileID: -8939493048056182369, guid: 65ce5e33540d1eb4583bae343ec292a9, type: 3}
-  pothosSprite: {fileID: -8939493048056182369, guid: 65ce5e33540d1eb4583bae343ec292a9, type: 3}
   cactusSprite: {fileID: -4504312699372548189, guid: 91854267467c51741b436b7ab603b207, type: 3}
-  flytrapSprite: {fileID: -9204078146142111011, guid: 14fbaebb46ba2b9488019958b7378dac, type: 3}
+  succulentSprite: {fileID: 2220412783956810588, guid: 8ad2f257637b14a478b866c3ea788288, type: 3}
+  lavenderSprite: {fileID: 4735872200154961976, guid: 304e2b950b44f25458bae1e9585e27f1, type: 3}
+  pothosSprite: {fileID: -8939493048056182369, guid: 65ce5e33540d1eb4583bae343ec292a9, type: 3}
+  monsteraSprite: {fileID: 3668135436697790579, guid: 6ab12ebf2d60d2d4fb4674e344271a44, type: 3}
+  flytrapSprite: {fileID: 1984516269045686439, guid: 41e9b8fd5259e6b4a98630bacb40f7b1, type: 3}
   deadSprite: {fileID: -6470974728599834694, guid: 65ce5e33540d1eb4583bae343ec292a9, type: 3}
   popOnStageChange: 1
   popScale: 1.2
@@ -8356,7 +8380,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0010070801, y: -181.8}
+  m_AnchoredPosition: {x: 0.0010070801, y: -181.80003}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2022086283
