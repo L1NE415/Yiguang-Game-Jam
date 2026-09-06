@@ -15,7 +15,7 @@ MonoBehaviour:
   ElementId: Element_C01
   DisplayName: "\u805A\u5149\u706F\u627E\u51CC\u73B2"
   Type: 1
-  Icon: {fileID: -1012840309609008439, guid: 20c8dfff4f08eed4cb7cc4c00be51eb4, type: 3}
+  Icon: {fileID: 7874399177466916155, guid: 2d3f3aed1fec30449bd7c90a1612bed9, type: 3}
   Description: "\u7279\u6B8A\u5143\u7D20\uFF08\u60C5\u7EEA\uFF09C01 \u805A\u5149\u706F\u627E\u51CC\u73B2\uFF5C\u5149\uFF0B\u627E\u51CC\u73B2\u7684\u963F\u59E8"
   UseEventName: UseC01
   OnCraftedEventName: 

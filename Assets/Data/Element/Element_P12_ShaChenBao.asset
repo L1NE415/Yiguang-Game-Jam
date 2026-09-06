@@ -15,7 +15,7 @@ MonoBehaviour:
   ElementId: Element_P12_ShaChenBao
   DisplayName: "\u6C99\u5C18\u66B4"
   Type: 1
-  Icon: {fileID: 8878343641880609924, guid: 599921795feb6434ab639ce0125d14ec, type: 3}
+  Icon: {fileID: -8970036783928430972, guid: 612fab90f9ded81458eb915f330ff283, type: 3}
   Description: "\u7279\u6B8A\u5143\u7D20\uFF08\u5929\u6C14\uFF09P12 \u6C99\u5C18\u66B4\uFF5C\u6C99\uFF0B\u6C99\uFF5C\u6C34\u5206-4\uFF5C\u9633\u5149-3\uFF5C\u517B\u5206+9\uFF5C\u6781\u504F\u517B\u5206\uFF0C\u9AD8\u98CE\u9669"
   UseEventName: UseP12
   OnCraftedEventName: CraftedP12
